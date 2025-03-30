@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "funcmain.h": "c",
+        "menu.h": "c",
+        "funcoes.h": "c",
+        "dados.h": "c"
+    }
+}

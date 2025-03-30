@@ -1,0 +1,92 @@
+\doxysection{Referência ao ficheiro Main/menu.h}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{Main/menu.h@{Main/menu.h}}
+
+
+Ficheiro com a função do menu.  
+
+
+{\ttfamily \#include "{}../\+Functions/funcoes.\+h"{}}\newline
+Diagrama de dependências de inclusão para menu.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Inclusão das bibliotecas necessárias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Ficheiro com a função do menu. 
+
+\begin{DoxyAuthor}{Autor}
+José Rebelo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}\index{menu.h@{menu.h}!menu@{menu}}
+\index{menu@{menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \label{menu_8h_a2a0e843767aeea4f433a28b9c54f573a} 
+void menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inclusão das bibliotecas necessárias. 
+
+Definição da função de menu Criar antena
+
+Esta função tem como objetivo criar uma nova antena à lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas) \\
+\hline
+{\em frequencia} & frequência (A ou O)\\
+\hline
+\end{DoxyParams}
+Guardar dados das antenas
+
+Esta função tem como objetivo guardar os dados das antenas do ficheiro na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em lista} & lista ligada \\
+\hline
+{\em temp} & variável temporária para guardar a lista ligada\\
+\hline
+\end{DoxyParams}
+Remover antena
+
+Esta função tem como objetivo remover uma antena da lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas)\\
+\hline
+\end{DoxyParams}
+Listar antenas
+
+Esta função tem como objetivo listar as antenas registadas na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada\\
+\hline
+\end{DoxyParams}
+     \texorpdfstring{$\ast$}{*} a\+Detetar nefasto      \texorpdfstring{$\ast$}{*} a
+
+Esta função tem como objetivo detetar o efeito nefasto      \texorpdfstring{$\ast$}{*} a
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo)       \#pragma region Detetar \doxylink{structNefasto}{Nefasto} Nefasto\texorpdfstring{$\ast$}{*} detetar\+Nefasto(const char\texorpdfstring{$\ast$}{*} caminho\+Ficheiro); \#pragma endregion \begin{DoxyVerb}/**
+   a@brief Listar antenas + nefasto
+   a@details Esta função tem como objetivo listar as antenas e o efeito nefasto
+   a@param lista lista ligada de antenas
+   a@param listaNefastos lista ligada de nefastos
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\#pragma region Listar Antenas + \doxylink{structNefasto}{Nefasto} Nefasto\texorpdfstring{$\ast$}{*} lista\+Nefastos = detetar\+Nefasto(caminho\+Ficheiro); // Lista ligada de nefastos listar\+Antenas\+Nef(lista, lista\+Nefastos); // A função aplica-\/se na variável da lista ligada \#pragma endregion

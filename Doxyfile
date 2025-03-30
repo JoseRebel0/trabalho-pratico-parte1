@@ -1,0 +1,104 @@
+# Doxyfile 1.12.0
+
+#---------------------------------------------------------------------------
+
+DOXYFILE_ENCODING      = UTF-8
+
+PROJECT_NAME           = "Trabalho Prático Parte 1"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Documentação do Trabalho Prático Parte 1"
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = Portuguese
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ABBREVIATE_BRIEF       = "The $name class" \
+                         "The $name widget" \
+                         "The $name file" \
+                         is \
+                         provides \
+                         specifies \
+                         contains \
+                         represents \
+                         a \
+                         an \
+                         the
+FULL_PATH_NAMES        = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+TAB_SIZE               = 4
+ALIASES                =
+
+#---------------------------------------------------------------------------
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+CASE_SENSE_NAMES       = YES
+SHOW_INCLUDE_FILES     = YES
+SHOW_FILES             = YES  # Garante que a lista de ficheiros aparece
+INLINE_INFO            = YES
+SORT_MEMBER_DOCS       = YES
+
+#---------------------------------------------------------------------------
+
+INPUT                  = Data Functions Main
+RECURSIVE              = YES
+FILE_PATTERNS          = *.c *.h
+EXCLUDE                =
+EXAMPLE_PATH           = examples
+EXAMPLE_PATTERNS       = *
+EXAMPLE_RECURSIVE      = NO
+
+#---------------------------------------------------------------------------
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_COLORSTYLE        = AUTO_LIGHT
+HTML_DYNAMIC_MENUS     = YES
+HTML_CODE_FOLDING      = YES
+HTML_COPY_CLIPBOARD    = YES
+GENERATE_TREEVIEW      = YES  # Adiciona uma árvore de navegação lateral
+DISABLE_INDEX          = NO   # Garante que o menu principal aparece
+
+#---------------------------------------------------------------------------
+
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+LATEX_CMD_NAME         = pdflatex
+PAPER_TYPE             = a4
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+
+#---------------------------------------------------------------------------
+
+GENERATE_RTF           = NO
+GENERATE_MAN           = NO
+GENERATE_XML           = NO
+GENERATE_DOCBOOK       = NO
+
+#---------------------------------------------------------------------------
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           = Data Functions Main  # Corrigido para os teus diretórios
+
+#---------------------------------------------------------------------------
+
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+DOT_IMAGE_FORMAT       = png
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 0
+GENERATE_LEGEND        = YES
+DOT_CLEANUP            = YES

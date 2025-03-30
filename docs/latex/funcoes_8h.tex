@@ -1,0 +1,96 @@
+\doxysection{Referência ao ficheiro Functions/funcoes.h}
+\hypertarget{funcoes_8h}{}\label{funcoes_8h}\index{Functions/funcoes.h@{Functions/funcoes.h}}
+
+
+Ficheiro com as definições das funções do menu.  
+
+
+{\ttfamily \#include "{}../\+Data/dados.\+h"{}}\newline
+Diagrama de dependências de inclusão para funcoes.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_af76ca1c6ef0441952e3dc481b1fe437a}{criar\+Antena}} (int x, int y, char frequencia)
+\begin{DoxyCompactList}\small\item\em Função de criar novas antenas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcoes_8h_a2a73579b9e1d789e83111a292e835704}{remover\+Antena}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{menu_8c_aee5fb13367bf087f465382e6b9477acd}{lista}}, const char \texorpdfstring{$\ast$}{*}caminho\+Ficheiro, int x, int y)
+\begin{DoxyCompactList}\small\item\em Função de remover as antenas do ficheiro e da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a271cfc7165df8985a5defc51e624835b}{carregar\+Antenas\+Do\+Ficheiro}} (const char \texorpdfstring{$\ast$}{*}caminho\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Função de carregar as antenas do ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Ficheiro com as definições das funções do menu. 
+
+\begin{DoxyAuthor}{Autor}
+José Rebelo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{funcoes_8h_a271cfc7165df8985a5defc51e624835b}\index{funcoes.h@{funcoes.h}!carregarAntenasDoFicheiro@{carregarAntenasDoFicheiro}}
+\index{carregarAntenasDoFicheiro@{carregarAntenasDoFicheiro}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{carregarAntenasDoFicheiro()}{carregarAntenasDoFicheiro()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a271cfc7165df8985a5defc51e624835b} 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} carregar\+Antenas\+Do\+Ficheiro (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{caminho\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Função de carregar as antenas do ficheiro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & Caminho do ficheiro \\
+\hline
+{\em lista} & Lista ligada \\
+\hline
+{\em y} & Coordenada y (linhas) \\
+\hline
+{\em x} & Coordenada x (colunas) \\
+\hline
+\end{DoxyParams}
+Abrir o ficheiro em modo leitura ("{}r -\/$>$ read"{})\Hypertarget{funcoes_8h_af76ca1c6ef0441952e3dc481b1fe437a}\index{funcoes.h@{funcoes.h}!criarAntena@{criarAntena}}
+\index{criarAntena@{criarAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{criarAntena()}{criarAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_af76ca1c6ef0441952e3dc481b1fe437a} 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} criar\+Antena (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char}]{frequencia}{}\end{DoxyParamCaption})}
+
+
+
+Função de criar novas antenas. 
+
+Função de criar novas antenas.
+
+Função de criar novas antenas 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & posição x \\
+\hline
+{\em y} & posição y \\
+\hline
+{\em frequencia} & frequência (A ou O) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Antena\texorpdfstring{$\ast$}{*} apontador para a nova antena 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a2a73579b9e1d789e83111a292e835704}\index{funcoes.h@{funcoes.h}!removerAntena@{removerAntena}}
+\index{removerAntena@{removerAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{removerAntena()}{removerAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a2a73579b9e1d789e83111a292e835704} 
+void remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{caminho\+Ficheiro}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Função de remover as antenas do ficheiro e da lista. 
+
+Função de remover as antenas do ficheiro e da lista.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & posição x da antena no ficheiro \\
+\hline
+{\em y} & posição y da antena no ficheiro \\
+\hline
+\end{DoxyParams}
