@@ -1,6 +1,6 @@
 /**
 * @file dados.h
-* @author Jos� Rebelo
+* @author José Rebelo
 * @brief Ficheiro com as estruturas das antenas e do nefasto
 */
 
@@ -8,17 +8,17 @@
  *@brief Estrutura de dados das antenas
  */
 typedef struct Antena {
-    int x; //posi��o x
-    int y; //posi��o y
+    int x; //posição x
+    int y; //posição y
     char frequencia; //frequ�ncia (A ou O)
-    struct Antena* prox; //apontador para a pr�xima antena
+    struct Antena* prox; //apontador para a próxima antena
 } Antena;
 
 /**
 * @brief Estrutura de dados do efeito nefasto
 */
 typedef struct Nefasto{
-    int x; //posi��o x
-    int y; //posi��o y
-    struct Nefasto* prox; // apontador para o pr�ximo efeito
+    int x; //posição x
+    int y; //posição y
+    struct Nefasto* prox; // apontador para o próximo efeito
 } Nefasto;

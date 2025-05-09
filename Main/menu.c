@@ -22,8 +22,8 @@ Antena* lista = NULL; // Lista ligada vazia (é assim que começa)
 void menu() {
 
     Antena* novaAntena = NULL; //Evita erros de lixo na memória
-    char frequencia;
-    int x, y;
+    char frequencia = 'A';
+    int x = 1, y =1;
     const char* caminhoFicheiro = "./Text/dados.txt"; // Caminho para o ficheiro dos dados
 
     /**
@@ -33,13 +33,7 @@ void menu() {
      * @param y posição y (linhas)
      * @param frequencia frequência (A ou O)
      */
-#pragma region Criar Antena
-
-    printf("Frequência (A/O): \n");
-    scanf(" %c", &frequencia); // O espaço evita o código avançar a introdução da frequência
-    
-    printf("X e Y: \n");
-    scanf("%d %d", &x, &y); // Introdução das coordenadas (x, y)           
+#pragma region Criar Antena      
 
     novaAntena = criarAntena(x, y, frequencia); // Cria nova antena
 
@@ -94,10 +88,7 @@ void menu() {
      * @param x posição x (colunas)
      * @param y posição y (linhas)
      */
-#pragma region Remover Antena
-
-    printf("X e Y: \n");
-    scanf("%d %d", &x, &y); // Introdução das coordenadas (x, y)         
+#pragma region Remover Antena      
 
     removerAntena(&lista, caminhoFicheiro, x, y); 
 
