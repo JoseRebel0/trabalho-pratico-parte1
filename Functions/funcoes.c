@@ -24,11 +24,12 @@
     Antena* criarAntena(int x, int y, char frequencia){
 
         Antena* novaAntena = (Antena*) malloc(sizeof(Antena)); // Aloca memória para a nova antena
-        
+
         // Intrução dos dados
         novaAntena->x = x;
         novaAntena->y = y;
         novaAntena->frequencia = frequencia;
+
         novaAntena->prox = NULL;
 
         return novaAntena;
@@ -53,36 +54,32 @@
          */
         FILE* ficheiro = fopen(caminhoFicheiro, "r");
 
-        if (ficheiro == NULL) { // Se o ficheiro não existir
-            
-            printf("Erro ao abrir o ficheiro, ficheiro inexistente.\n");
-            return NULL;
-        }
-
         Antena* lista = NULL; // Lista vazia no inicio
-        char linha[256]; // Tamanho maximo da linha, em caso de ser pretendido aumentar
-        int y = 0; // Coordenada y de começo
+        char c; // Caracter atual
+        int y = 0; // Começa no 0
+        int x = 0; // Começa no 0
 
-        // Ler o ficheiro linha a linha
-        while (fgets(linha, sizeof(linha), ficheiro)) { // fgets le cada linha do ficheiro e armazena na variável linha e o sizeof delimita o tamanho da linha que pode ser lido
+        // Ler o ficheiro caracter a caracter
+        while ((c = fgetc(ficheiro)) != EOF) { // lê a linha caracter a caracter até chegar ao fim do ficheiro
             
-            int x = 0; // Após mudar de linha x volta a 0, esta linha tem de ficar aqui dentro caso contrário a função não funciona
+            if(c == '\n' || c == '\0'){
 
-            // Percorrer cada caracter da linha
-            while (linha[x] != '\0' && linha[x] != '\n') { // Enquanto não chegar ao fim da linha ou não encontrar o \n vai ignorar os pontos e focar apenas nas antenas
-                
-                if (linha[x] != '.') { // Se não for um ponto
+                y++; // Muda de linha
+                x = 0; // Reinicia a coluna
 
-                    Antena* novaAntena = criarAntena(x, y, linha[x]); // Cria uma nova antena
-
-                    if (novaAntena != NULL) {
-                        novaAntena->prox = lista; // Adiciona no início da lista ligada
-                        lista = novaAntena;
-                    }
-                }
-                x++;
             }
-            y++; // Incrementa a coordenada Y (próxima linha)
+
+            if(c == 'A' || c == 'O') { // Se o caracter for A ou O
+
+                Antena* novaAntena = criarAntena(x, (y+1), c); // Cria nova antena
+
+                novaAntena->prox = lista; // Atualiza os dados da nova antena para a proxima
+                lista = novaAntena; // Atualiza a lista ligada com a nova antena
+
+            }
+
+            x++; // Proxima coluna (carcater a caracter)
+            
         }
 
         fclose(ficheiro);
@@ -93,200 +90,223 @@
 
 
 /**
+ * @brief Função de gcarregar grafos do ficheiro
+ * @param lista lista ligada de antenas
+ * @param listaArestas lista ligada de arestas
+ * @param caminhoFicheiro caminho do ficheiro (mantém-se sempre o mesmo)
+ */
+#pragma region Carregar Grafos do Ficheiro
+
+    GR* carregarGrafos(const char* caminhoFicheiro) {
+
+        FILE* ficheiro = fopen(caminhoFicheiro, "r");
+
+        GR* grafo = (GR*) malloc(sizeof(GR));
+
+        grafo->lista = NULL; // Lista vazia no inicio
+        grafo->listaArestas = NULL;
+
+        if (ficheiro == NULL) { // Se não conseguiu abrir o ficheiro
+            
+            return NULL; 
+        
+        }
+
+        int x = 0;
+        int y = 0;
+        char c;
+
+        while((c = fgetc(ficheiro)) != EOF) {
+            
+            if(c == '\n' || c == '\0'){
+
+                y++; // Muda de linha
+                x = 0; // Reinicia a coluna
+
+            }
+
+            if(c == 'A' || c == 'O') { // Se o caracter for A ou O
+
+                Antena* novaAntena = criarAntena(x, (y+1), c); // Cria nova antena
+
+                if(novaAntena == NULL) { // Se a nova antena estiver vazia
+
+                    return NULL;// FALSE
+                    
+                }
+
+                else { // Se não estiver
+                    
+                    novaAntena->prox = grafo->lista; // Atualiza os dados da nova antena para a proxima
+                    grafo->lista = novaAntena; // Atualiza a lista ligada com a nova antena
+
+                }
+
+            }
+
+            x++; // Proxima coluna (carcater a caracter)
+            
+        }
+
+        fclose(ficheiro); // Fecha o ficheiro
+        return grafo; // Retorna o grafo
+    }
+#pragma endregion
+
+
+
+
+/**
  * @brief Função de remover as antenas da lista
  * @param x posição x da antena no ficheiro
  * @param y posição y da antena no ficheiro
  */
 #pragma region Remover Antena
-    void removerAntena(Antena** lista, const char* caminhoFicheiro, int x, int y) { // ** porque a lista já é um apontador para a lista ligada
 
-        if (*lista == NULL) { // Se a lista estiver vazia, imprime uma mensagem de erro
-            printf("Lista vazia. Nenhuma antena para remover.\n");
-            return;
-        }
+    Antena* removerAntena(Antena* lista, int x, int y) { 
 
-        Antena* atual = *lista; // Apontador onde percorre a lista indicando a antena atual
+        Antena* atual = lista; // Apontador onde percorre a lista indicando a antena atual
         Antena* anterior = NULL;
 
         // Percorre a lista para encontrar a antena com as coordenadas (x, y) introduzidas pelo utilizador
         while (atual != NULL && (atual->x != x || atual->y != y)) { 
+
             anterior = atual; 
             atual = atual->prox; 
         }
 
-        // Se encontrou a antena, remove-a da lista ligada
+        // Se encontrou a antena
         if (atual != NULL) {
 
             if (anterior == NULL) {
-                *lista = atual->prox; // Remover do início da lista
+                lista = atual->prox; // Remover do início da lista
             } 
             
+            // Se a antena anterior não for vazia, então só pode estar no meio ou no fim
             else {
-                anterior->prox = atual->prox; // Remover do meio ou fim
+                anterior->prox = atual->prox;
             }
-            free(atual); // Liberta a memória da antena removida
+             (atual); // Liberta a memória da antena removida
         } 
-        else {
-            printf("Antena não encontrada na lista ligada.\n");
-            return;
-        }
+        return lista;
     }
 #pragma endregion
+
+
+
+
+/**
+ * @brief Função de dedução de efeito nefasto
+ * @param lista lista ligada de antenas
+ * @param listaNefasto lista ligada de efeitos nefastos
+ * @param x posição x da antena no ficheiro
+ * @param y posição y da antena no ficheiro
+ */
+#pragma region Deduzir Efeito Nefasto
+
+    Nefasto* deduzirNefasto(Nefasto* listaNefasto,Antena* lista) {
+
+        for(Antena* antenaA = lista; antenaA != NULL; antenaA = antenaA->prox) { // Percorre a lista para a primeira antena
+
+            for(Antena* antenaB = antenaA->prox; antenaB != NULL; antenaB = antenaB->prox) { // Percorre para a segunda antena
+
+                if(antenaA->x == antenaB->x && antenaA->frequencia == antenaB->frequencia) { // Se a coluna e a frequência forem iguais
+                    
+                    Nefasto* novoNefasto = (Nefasto*) malloc(sizeof(Nefasto)); // Aloca memória para o novo efeito nefasto
+
+                    novoNefasto->x = antenaA->x; // Pode ser tanto de uma como de outra os x são iguais
+                    novoNefasto->y = ((antenaA->y+antenaB->y)/2); // A média das duas antenas (A e B) para a coordenada y do nefasto
+                    novoNefasto->frequencia = antenaB->frequencia;// Pode ser tanto de uma como de outra as frequências são iguais
+                    novoNefasto->prox = listaNefasto;
+                    listaNefasto = novoNefasto;
+
+                }
+
+            }
+
+        }
+    
+        return listaNefasto;
+
+    }
+
+#pragma endregion
+
 
 
 
 /**
  * @brief Função de listar as antenas
  * @param lista lista ligada de antenas
+ * @param listaNefasto lista ligada de efeitos nefastos
  */
 #pragma region Listar Antenas
-void listarAntenas(Antena* lista) {
-
-    if (lista == NULL) { // Se a lista estiver vazia, mostra a mensagem de erro
-
-        printf("Nenhuma antena encontrada na lista.\n");
-        return;
-    }
+char* listarAntenas(Antena* lista, Nefasto* listaNefasto) { // Função de listar as antenas
     
-    printf("-------------|Antenas|------------\n"); // Se a lista não estiver vazia, imprime a lista de antenas
-    printf("Posicao       |    Frequencia\n");
+    printf("-------------|Antenas|------------\n"); // Imprime a lista de antenas
+    printf("Posicao       |    Frequencia     \n");
     printf("--------------|-------------------\n");
-    while (lista != NULL) {
+    while (lista != NULL) { // Enquanto as listas não forem vazias
 
         printf("(%d, %d)        |      %C \n", lista->x, lista->y, lista->frequencia);
         lista = lista->prox;
     }
+
+    printf("-----------|Nefasto|------------\n");
+    printf("Posicao       |    Frequencia     \n");
+    printf("--------------|-------------------\n");
+    while (listaNefasto != NULL) { // Enquanto as listas não forem vazias
+
+        printf("(%d, %d)        |      %C \n", listaNefasto->x, listaNefasto->y, listaNefasto->frequencia);
+        listaNefasto = listaNefasto->prox;
+    }
+
+    
 }
 #pragma endregion
 
-/**
- * a@brief Função de adicionar o nefasto à lista ligada
- * a@param x coordenada x (colunas)
- * a@param y coordenada y (linhas)
- * a@return Nefasto* apontador para a nova estrutura Nefasto
- 
-#pragma region Adicionar Nefasto
-Nefasto* adicionarNefasto(int x, int y) {
 
-    Nefasto* novo = (Nefasto*)malloc(sizeof(Nefasto)); // Aloca memória para o novo nefasto
 
-    if (novo == NULL) { // Se a alocação falhar imprime a mensagem de erro
-        printf("Erro a alocar a memória.\n");
-        return NULL;
-    }
 
-    novo->x = x;
-    novo->y = y;
-    novo->prox = NULL; // O apontador começa vazio
-    return novo;
-}
-#pragma endregion
 
 /**
- * a@brief Função de deduzir/detetar o efeito nefasto
- * a@param mapa array que armazena o "mapa" (ficheiro dos dados)
- 
-#pragma region Deducao Nefasto
-Nefasto* detetarNefasto(const char* caminhoFicheiro) {
+ * @brief Função de criar arestas
+ * @param grafo grafo
+ * @param lista lista ligada de arestas
+ */
+#pragma region Criar Aresta
 
-    FILE* ficheiro = fopen(caminhoFicheiro, "r"); // Abre o ficheiro em modo leitura
+    Aresta* criarAresta(GR* grafo) { // Cria nova aresta
 
-    if (ficheiro == NULL) { // Se o ficheiro não existir
-        printf("Erro ao abrir o ficheiro.\n");
-        return NULL;
-    }
+        Antena* antenaA = grafo->lista; // Apontador para a lista de antenas
 
-    char mapa[100][100]; // Matriz para armazenar o mapa pode aumentar se desejado, e onde se vai analisar o efeito nefasto
-    int linhas = 0, colunas = 0; // Contadores de linhas e colunas (x,y), para as coordenadas e começa no 0
-    char linha[256]; // Tamanho máximo da linha
+        while(antenaA != NULL){
 
-    while (fgets(linha, sizeof(linha), ficheiro)) { // fgets lê cada linha do ficheiro e armazena na variável linha
-        colunas = strlen(linha) - 1; // Removendo o '\n', o fgets lê a linha toda se chegar ao fim da linha e não atingir o limite (256), então -1 para não contar o \n
-        
-        for (int x = 0; x < colunas; x++) { // enquanto x for menor que o número de colunas, vai percorrer a linha correspondente à coluna
-            mapa[linhas][x] = linha[x];
-        }
-        linhas++; // Avança de linha
-    }
+            Antena* antenaB = antenaA->prox; 
 
-    fclose(ficheiro); // Fecha o ficheiro
+            while(antenaB != NULL){
 
-    Nefasto* listaNefastos = NULL; // Lista de nefastos começa vazia
+                if(antenaA->frequencia == antenaB->frequencia) { // Se as frequências forem iguais
 
-    // Percorrer o mapa para encontrar efeitos nefastos
-    for (int y = 0; y < linhas; y++) { // Percorre as linhas
-        for (int x = 0; x < colunas; x++) { // Percorre as colunas
-            if (mapa[y][x] != '.' && mapa[y][x] != '#') { // Se os caracteres do "mapa" forem diferentes de "." e "#"
-                // Verificar se há efeito nefasto na horizontal
-                for (int dx = x + 3; dx < colunas; dx += 3) { // dx procura um efeito nefasto na horizontal (colunas)
-                    if (mapa[y][dx] == mapa[y][x]) { // Se os caracteres forem iguais (mesma frequência)
-                        int meioX = (x + dx) / 2; // Calcula a posição do meio entre as antenas (x e dx)
-                        if (mapa[y][meioX] == '.') { // Se for um espaço vazio, ocorre o nefasto
-                            mapa[y][meioX] = '#'; // Marca o espaço com #
-                            Nefasto* novo = adicionarNefasto(meioX, y); // Adiciona o nefasto à lista
-                            novo->prox = listaNefastos;
-                            listaNefastos = novo;
-                        }
-                    }
+                    Aresta* novaAresta = (Aresta*) malloc(sizeof(Aresta)); // Aloca memória para a nova aresta
+
+                    novaAresta->origem = antenaA; // Apontador para a origem da aresta (vértice de origem)
+                    novaAresta->destino = antenaB; // Apontador para o destino da aresta (vértice de destino)
+                    novaAresta->prox = grafo->listaArestas; // Liga a lista temporária à lista principal
+                    grafo->listaArestas = novaAresta; // Atualiza a lista principal
+
+                    return novaAresta;
+
                 }
 
-                // Verificar se há efeito nefasto na vertical
-                for (int dy = y + 3; dy < linhas; dy += 3) {
-                    if (mapa[dy][x] == mapa[y][x]) { // Frequências iguais
-                        int meioY = (y + dy) / 2;
-                        if (mapa[meioY][x] == '.') { // Se for um espaço vazio, ocorre o nefasto
-                            mapa[meioY][x] = '#';
-                            Nefasto* novo = adicionarNefasto(x, meioY); // Adiciona o nefasto à lista
-                            novo->prox = listaNefastos;
-                            listaNefastos = novo;
-                        }
-                    }
-                }
+                antenaB = antenaB->prox;
+
             }
+
+            antenaA = antenaA->prox;
+
         }
+
     }
 
-    // Escrever de volta no ficheiro com os nefastos detetados
-    ficheiro = fopen(caminhoFicheiro, "w"); // Abre o ficheiro em modo escrita
-
-    if (ficheiro == NULL) {
-        printf("Erro ao abrir o ficheiro para escrita.\n");
-        return listaNefastos;
-    }
-
-    for (int y = 0; y < linhas; y++) { // Percorre as linhas
-        for (int x = 0; x < colunas; x++) { // Percorre as colunas
-            fputc(mapa[y][x], ficheiro); // Escreve cada caracter no ficheiro
-        }
-        fputc('\n', ficheiro); // Escreve o fim de linha no ficheiro
-    }
-
-    fclose(ficheiro); // Fecha o ficheiro
-
-    return listaNefastos; // Retorna a lista de nefastos
-}
 #pragma endregion
-
-/**
- * a@brief Função de listar as antenas + nefasto
- * a@param lista lista ligada de antenas
- * a@param listaNefastos lista ligada de nefastos
- 
-#pragma region Listar Antenas Nefasto
-void listarAntenasNef(Antena* lista, Nefasto* listaNefastos){
-
-    if (lista && listaNefastos != NULL) {
-        printf("-------------------| Antenas |-------------------\n");
-        printf("Posicao       |    Frequencia    |    Nefasto    \n");
-        printf("--------------|------------------|---------------\n");
-        while (lista && listaNefastos != NULL) {
-            printf("(%d, %d)        |      %C        |     (%d, %d)    \n", lista->x, lista->y, lista->frequencia, listaNefastos->x, listaNefastos->y);
-            lista = lista->prox;
-            listaNefastos = listaNefastos->prox;
-        }
-    } else {
-        printf("Nenhuma antena encontrada.\n");
-    }
-}
-#pragma endregion
-*/

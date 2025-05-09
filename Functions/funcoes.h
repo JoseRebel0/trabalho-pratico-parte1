@@ -3,6 +3,7 @@
  * @author José Rebelo
  * @brief Ficheiro com as definições das funções do menu
 */
+
 #include "../Data/dados.h"
 
 
@@ -16,7 +17,8 @@ Antena* criarAntena(int x, int y, char frequencia);
 /**
  * @brief Função de remover as antenas do ficheiro e da lista
  */
-void removerAntena(Antena** lista, const char* caminhoFicheiro, int x, int y);
+Antena* removerAntena(Antena* lista, int x, int y);
+
 
 
 /**
@@ -24,27 +26,24 @@ void removerAntena(Antena** lista, const char* caminhoFicheiro, int x, int y);
  */
 Antena* carregarAntenasDoFicheiro(const char* caminhoFicheiro);
 
-
-
 /**
- * a@brief Função de listar as antenas
+ * @brief Função de listar as antenas
+ */
+ char* listarAntenas(Antena* lista, Nefasto* listaNefasto);
 
-void listarAntenas(Antena* lista);
-
-
-/**
- * a@brief Função de adicionar nefasto
-
-Nefasto* adicionarNefasto(int x, int y);
-
-/**
-* a@brief Função de dedução das localização
-
-Nefasto* detetarNefasto(const char* caminhoFicheiro);
-
-/**
- * a@brief Função de listar as antenas + nefasto
-
-void listarAntenasNef(Antena* lista, Nefasto* listaNefastos);
-*/
 #pragma endregion
+
+/**
+ * @brief Função de dedução de efeito nefasto
+ */
+Nefasto* deduzirNefasto(Nefasto* listaNefasto, Antena* lista); 
+
+/**
+ * @brief Função de carregar os grafos do ficheiro
+ */
+GR* carregarGrafos(const char* caminhoFicheiro);
+
+/**
+ * @brief Função de criar arestas
+ */
+Aresta* criarAresta(GR* grafo);
