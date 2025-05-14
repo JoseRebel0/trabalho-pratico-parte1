@@ -89,72 +89,6 @@
 
 
 
-/**
- * @brief Função de gcarregar grafos do ficheiro
- * @param lista lista ligada de antenas
- * @param listaArestas lista ligada de arestas
- * @param caminhoFicheiro caminho do ficheiro (mantém-se sempre o mesmo)
- */
-#pragma region Carregar Grafos do Ficheiro
-
-    GR* carregarGrafos(const char* caminhoFicheiro) {
-
-        FILE* ficheiro = fopen(caminhoFicheiro, "r");
-
-        GR* grafo = (GR*) malloc(sizeof(GR));
-
-        grafo->lista = NULL; // Lista vazia no inicio
-        grafo->listaArestas = NULL;
-
-        if (ficheiro == NULL) { // Se não conseguiu abrir o ficheiro
-            
-            return NULL; 
-        
-        }
-
-        int x = 0;
-        int y = 0;
-        char c;
-
-        while((c = fgetc(ficheiro)) != EOF) {
-            
-            if(c == '\n' || c == '\0'){
-
-                y++; // Muda de linha
-                x = 0; // Reinicia a coluna
-
-            }
-
-            if(c == 'A' || c == 'O') { // Se o caracter for A ou O
-
-                Antena* novaAntena = criarAntena(x, (y+1), c); // Cria nova antena
-
-                if(novaAntena == NULL) { // Se a nova antena estiver vazia
-
-                    return NULL;// FALSE
-                    
-                }
-
-                else { // Se não estiver
-                    
-                    novaAntena->prox = grafo->lista; // Atualiza os dados da nova antena para a proxima
-                    grafo->lista = novaAntena; // Atualiza a lista ligada com a nova antena
-
-                }
-
-            }
-
-            x++; // Proxima coluna (carcater a caracter)
-            
-        }
-
-        fclose(ficheiro); // Fecha o ficheiro
-        return grafo; // Retorna o grafo
-    }
-#pragma endregion
-
-
-
 
 /**
  * @brief Função de remover as antenas da lista
@@ -267,46 +201,89 @@ char* listarAntenas(Antena* lista, Nefasto* listaNefasto) { // Função de lista
 
 
 
-
-
 /**
- * @brief Função de criar arestas
- * @param grafo grafo
- * @param lista lista ligada de arestas
+ * @brief Função que cria uma aresta entre duas antenas
+ * @param origem Antena de origem
+ * @param destino Antena de destino
+ * @return Aresta* Nova aresta criada
  */
 #pragma region Criar Aresta
 
-    Aresta* criarAresta(GR* grafo) { // Cria nova aresta
+Aresta* criarAresta(Antena* origem, Antena* destino) {
 
-        Antena* antenaA = grafo->lista; // Apontador para a lista de antenas
+    Aresta* novaAresta = (Aresta*) malloc(sizeof(Aresta));
 
-        while(antenaA != NULL){
+    novaAresta->origem = origem;
+    novaAresta->destino = destino;
+    novaAresta->prox = NULL;
+    novaAresta->distancia = abs(origem->x - destino->x) + abs(origem->y - destino->y); // Cálculo da distância entre as antenas (peso da aresta)
 
-            Antena* antenaB = antenaA->prox; 
-
-            while(antenaB != NULL){
-
-                if(antenaA->frequencia == antenaB->frequencia) { // Se as frequências forem iguais
-
-                    Aresta* novaAresta = (Aresta*) malloc(sizeof(Aresta)); // Aloca memória para a nova aresta
-
-                    novaAresta->origem = antenaA; // Apontador para a origem da aresta (vértice de origem)
-                    novaAresta->destino = antenaB; // Apontador para o destino da aresta (vértice de destino)
-                    novaAresta->prox = grafo->listaArestas; // Liga a lista temporária à lista principal
-                    grafo->listaArestas = novaAresta; // Atualiza a lista principal
-
-                    return novaAresta;
-
-                }
-
-                antenaB = antenaB->prox;
-
-            }
-
-            antenaA = antenaA->prox;
-
-        }
-
-    }
+    return novaAresta;
+}
 
 #pragma endregion
+
+
+
+/**
+ * @brief Função que cria um grafo com base na lista de antenas
+ * @param lista Lista ligada de antenas
+ * @param listaArestas Lista ligada de arestas
+ * @return GR* Grafo criado
+ */
+GR* criarGrafo(Antena* lista) {
+
+    GR* grafo = (GR*) malloc(sizeof(GR));
+
+    grafo->antenas = lista;
+    grafo->listaArestas = NULL;
+
+    for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) {
+
+        for (Antena* a2 = a1->prox; a2 != NULL; a2 = a2->prox) {
+
+            
+            if (a1->frequencia == a2->frequencia) {
+
+                // Criar aresta a1 -> a2
+                Aresta* novaAresta = criarAresta(a1, a2);
+                novaAresta->prox = grafo->listaArestas;
+                grafo->listaArestas = novaAresta;
+
+                // Criar aresta a2 -> a1
+                Aresta* novaAresta2 = criarAresta(a2, a1);
+                novaAresta2->prox = grafo->listaArestas;
+                grafo->listaArestas = novaAresta2;
+            }
+        }
+    }
+
+    return grafo;
+}
+
+
+
+/**
+ * @brief Função de listar todas as arestas do grafo
+ * @param grafo Ponteiro para o grafo
+ * @param atual Aresta atual
+ */
+char listarArestas(GR* grafo) {
+
+    Aresta* atual = grafo->listaArestas;
+
+    printf("-------------| Arestas do Grafo |------------\n");
+    printf("Origem       ->  Destino     | Freq | Distancia\n");
+    printf("----------------------------------------------\n");
+
+    while (atual != NULL) {
+
+        printf("(%d, %d) -> (%d, %d)   |   %c   |   %.2f\n",
+               atual->origem->x, atual->origem->y,
+               atual->destino->x, atual->destino->y,
+               atual->origem->frequencia,  
+               atual->distancia);
+
+        atual = atual->prox;
+    }
+}

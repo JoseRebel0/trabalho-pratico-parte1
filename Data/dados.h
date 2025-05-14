@@ -6,6 +6,8 @@
 
 #include "stdbool.h"
 
+#define X_Y 1
+
 /**
  *@brief Estrutura de dados das antenas
  */
@@ -14,6 +16,7 @@ typedef struct Antena {
     int x; //posição x
     int y; //posição y
     char frequencia; //frequência (A ou O)
+    struct Adjacencia* adjacencias; //apontador para a lista de adjacências
     bool visitada; //se a antena foi visitada ou não
     struct Antena* prox; //apontador para a próxima antena
 
@@ -36,19 +39,21 @@ typedef struct Nefasto {
  */
 typedef struct GR{
 
-    struct Antena* lista; 
-    struct Aresta* listaArestas; 
+    struct Antena* antenas;
+    struct Aresta* listaArestas;
 
 } GR;
 
 /**
- * @brief Estrutura de dados da adjacencia
+ * @brief Estrutura de dados das adjacências
  */
-typedef struct Adjacencia {
+typedef struct Adjacencia{
 
-    float distancia;
+    int distancia; //distância entre as antenas
 
 } Adjacencia;
+
+
 
 /**
  * @brief Estrutura de dados das arestas
@@ -58,5 +63,6 @@ typedef struct Aresta{
     struct Antena* origem;
     struct Antena* destino; 
     struct Aresta* prox;
+    float distancia;
 
 } Aresta;

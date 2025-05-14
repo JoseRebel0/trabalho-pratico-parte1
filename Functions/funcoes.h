@@ -39,11 +39,16 @@ Antena* carregarAntenasDoFicheiro(const char* caminhoFicheiro);
 Nefasto* deduzirNefasto(Nefasto* listaNefasto, Antena* lista); 
 
 /**
- * @brief Função de carregar os grafos do ficheiro
+ * @brief Função de criar grfos
  */
-GR* carregarGrafos(const char* caminhoFicheiro);
+GR* criarGrafo(Antena* lista);
 
 /**
  * @brief Função de criar arestas
  */
-Aresta* criarAresta(GR* grafo);
+Aresta* criarAresta(Antena* origem, Antena* destino);
+
+/**
+ * @brief Função de listar as arestas
+ */
+char listarArestas(GR* grafo);

@@ -15,8 +15,6 @@
 #include <stddef.h>
 #include <string.h>
 
-#define X_Y 1
-
 #pragma endregion
 
 /**
@@ -28,12 +26,13 @@
  */
 Antena* lista = NULL;
 Nefasto* listaNefasto = NULL;
-Aresta* listaArestasA = NULL; // Lista de arestas que ligam ao vértice A
-Aresta* listaArestasO = NULL; // Lista de arestas que ligam ao vértice O
+Aresta* listaArestas = NULL; // Lista de arestas
+
 
 int main() {
 
     Antena* novaAntena = NULL; // Começa vazia
+    GR* novoGrafo = NULL; // Começa vazio
     char frequencia = 'A';
     int x = X_Y, y = X_Y;
 
@@ -119,9 +118,6 @@ int main() {
 #pragma endregion
 
 
-// VAI PARA TESTES  ||
-//                  V
-
 /**
  * @brief Deduzir efeito nefasto
  * @details Esta função tem como objetivo deduzir o efeito nefasto da antena
@@ -136,21 +132,19 @@ int main() {
 
 
 
-//Adicionar a função de carregar os grafos
-
-
-
-
 /**
- * @brief Criar arestas
- * @details Esta função tem como objetivo criar as arestas do grafo
+ * @brief Carregar grafo do ficheiro
+ * @details Esta função tem como objetivo carregar o grafo do ficheiro
  * @param lista lista ligada de antenas
- * @param listaArestasA lista ligada de arestas
  */
-#pragma region Criar Aresta
+#pragma region Criar Grafo
 
-    // Adicionar a função de criar arestas
-    
+    novoGrafo = criarGrafo(lista);
+
+    if (novoGrafo == NULL) { // Se o grafo estiver vazio
+
+        return false; // FALSE
+    }
 
 #pragma endregion
 
@@ -168,6 +162,17 @@ int main() {
        
 #pragma endregion
 
+
+/**
+ * @brief Listar arestas
+ * @details Esta função tem como objetivo listar as arestas do grafo
+ * @param grafo grafo
+ */
+#pragma region Listar Arestas
+
+    listarArestas(novoGrafo); // A função aplica-se na variável do grafo
+
+#pragma endregion
 
 
 }
