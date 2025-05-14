@@ -102,6 +102,26 @@ int main() {
             
 #pragma endregion
 
+
+/**
+ * @brief Carregar grafo do ficheiro
+ * @details Esta função tem como objetivo carregar o grafo do ficheiro
+ * @param lista lista ligada de antenas
+ */
+#pragma region Criar Grafo
+
+    novoGrafo = criarGrafo(lista);
+
+    if (novoGrafo == NULL) { // Se o grafo estiver vazio
+
+        return false; // FALSE
+    }
+
+    listarArestas(novoGrafo);
+
+#pragma endregion
+
+
 /**
  * @brief Remover antena
  * @details Esta função tem como objetivo remover uma antena da lista ligada
@@ -131,7 +151,6 @@ int main() {
 #pragma endregion
 
 
-
 /**
  * @brief Carregar grafo do ficheiro
  * @details Esta função tem como objetivo carregar o grafo do ficheiro
@@ -150,7 +169,6 @@ int main() {
 
 
 
-
 /**
  * @brief Listar antenas
  * @details Esta função tem como objetivo listar as antenas registadas na lista ligada
@@ -158,7 +176,7 @@ int main() {
  */
 #pragma region Listar Antenas
 
-    listarAntenas(lista, listaNefasto); // A função aplica-se na variável da lista ligada
+    listarAntenas(lista, listaNefasto);
        
 #pragma endregion
 
@@ -170,7 +188,7 @@ int main() {
  */
 #pragma region Listar Arestas
 
-    listarArestas(novoGrafo); // A função aplica-se na variável do grafo
+    listarArestas(novoGrafo);
 
 #pragma endregion
 

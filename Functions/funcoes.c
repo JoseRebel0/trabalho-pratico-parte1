@@ -224,9 +224,8 @@ Aresta* criarAresta(Antena* origem, Antena* destino) {
 #pragma endregion
 
 
-
 /**
- * @brief Função que cria um grafo com base na lista de antenas
+ * @brief Função que cria um grafo com base nas antenas
  * @param lista Lista ligada de antenas
  * @param listaArestas Lista ligada de arestas
  * @return GR* Grafo criado
@@ -235,7 +234,8 @@ GR* criarGrafo(Antena* lista) {
 
     GR* grafo = (GR*) malloc(sizeof(GR));
 
-    grafo->antenas = lista;
+    grafo->antenas = lista; // Carrega as antenas do ficheiro
+    
     grafo->listaArestas = NULL;
 
     for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) {

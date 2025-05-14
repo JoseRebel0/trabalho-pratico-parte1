@@ -39,7 +39,7 @@ Antena* carregarAntenasDoFicheiro(const char* caminhoFicheiro);
 Nefasto* deduzirNefasto(Nefasto* listaNefasto, Antena* lista); 
 
 /**
- * @brief Função de criar grfos
+ * @brief Função de criar grafos
  */
 GR* criarGrafo(Antena* lista);
 
