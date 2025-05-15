@@ -25,7 +25,7 @@
 
         Antena* novaAntena = (Antena*) malloc(sizeof(Antena)); // Aloca memória para a nova antena
 
-        // Intrução dos dados
+        // Introdução dos dados
         novaAntena->x = x;
         novaAntena->y = y;
         novaAntena->frequencia = frequencia;
@@ -54,12 +54,11 @@
          */
         FILE* ficheiro = fopen(caminhoFicheiro, "r");
 
-        Antena* lista = NULL; // Lista vazia no inicio
+        Antena* lista = NULL;
         char c; // Caracter atual
-        int y = 0; // Começa no 0
-        int x = 0; // Começa no 0
+        int y = 0; 
+        int x = 0; 
 
-        // Ler o ficheiro caracter a caracter
         while ((c = fgetc(ficheiro)) != EOF) { // lê a linha caracter a caracter até chegar ao fim do ficheiro
             
             if(c == '\n' || c == '\0'){
@@ -120,7 +119,7 @@
             else {
                 anterior->prox = atual->prox;
             }
-             (atual); // Liberta a memória da antena removida
+            free(atual); // Liberta a memória da antena removida
         } 
         return lista;
     }
@@ -195,6 +194,7 @@ char* listarAntenas(Antena* lista, Nefasto* listaNefasto) { // Função de lista
         listaNefasto = listaNefasto->prox;
     }
 
+    return "";
     
 }
 #pragma endregion
@@ -234,13 +234,13 @@ GR* criarGrafo(Antena* lista) {
 
     GR* grafo = (GR*) malloc(sizeof(GR));
 
-    grafo->antenas = lista; // Carrega as antenas do ficheiro
+    grafo->antenas = lista; // Carrega as antenas da lista de antenas
     
     grafo->listaArestas = NULL;
 
-    for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) {
+    for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) { // Origem
 
-        for (Antena* a2 = a1->prox; a2 != NULL; a2 = a2->prox) {
+        for (Antena* a2 = a1->prox; a2 != NULL; a2 = a2->prox) { // Destino
 
             
             if (a1->frequencia == a2->frequencia) {
@@ -268,7 +268,7 @@ GR* criarGrafo(Antena* lista) {
  * @param grafo Ponteiro para o grafo
  * @param atual Aresta atual
  */
-char listarArestas(GR* grafo) {
+char* listarArestas(GR* grafo) {
 
     Aresta* atual = grafo->listaArestas;
 
@@ -286,4 +286,7 @@ char listarArestas(GR* grafo) {
 
         atual = atual->prox;
     }
+
+    return "";
+
 }

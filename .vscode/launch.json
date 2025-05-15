@@ -1,25 +1,33 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug C/C++",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "C:/Users/joser/OneDrive/Documentos/LESI/EDA/Trabalho_Prático/teste.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "C:/Users/joser/OneDrive/Documentos/LESI/EDA/Trabalho_Prático/",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "setupCommands": [
         {
-            "name": "Debug C/C++",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "C:/Users/joser/OneDrive/Documentos/LESI/EDA/Trabalho_Prático/teste.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "C:/Users/joser/OneDrive/Documentos/LESI/EDA/Trabalho_Prático/",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "Compilar C"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ],
+      "preLaunchTask": "Compilar C"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/filipa/trabalho-pratico-parte1/Functions",
+      "program": "/Users/filipa/trabalho-pratico-parte1/Functions/build/Debug/outDebug"
+    }
+  ]
 }

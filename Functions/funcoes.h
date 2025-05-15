@@ -51,4 +51,4 @@ Aresta* criarAresta(Antena* origem, Antena* destino);
 /**
  * @brief Função de listar as arestas
  */
-char listarArestas(GR* grafo);
+char* listarArestas(GR* grafo);
