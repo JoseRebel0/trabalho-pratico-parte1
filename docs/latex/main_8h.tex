@@ -1,0 +1,114 @@
+\doxysection{Referência ao ficheiro Main/main.h}
+\hypertarget{main_8h}{}\label{main_8h}\index{Main/main.h@{Main/main.h}}
+{\ttfamily \#include "{}../\+Functions/funcoes.\+h"{}}\newline
+Diagrama de dependências de inclusão para main.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{main_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{main_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8h_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Inclusão das bibliotecas necessárias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{main_8h_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.h@{main.h}!main@{main}}
+\index{main@{main}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8h_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inclusão das bibliotecas necessárias. 
+
+Definição da função de menu Criar antena
+
+Esta função tem como objetivo criar uma nova antena à lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas) \\
+\hline
+{\em frequencia} & frequência (A ou O)\\
+\hline
+\end{DoxyParams}
+Guardar dados das antenas
+
+Esta função tem como objetivo guardar os dados das antenas do ficheiro na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em lista} & lista ligada \\
+\hline
+{\em temp} & variável temporária para guardar a lista ligada\\
+\hline
+\end{DoxyParams}
+Carregar grafo do ficheiro
+
+Esta função tem como objetivo carregar o grafo do ficheiro 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas\\
+\hline
+\end{DoxyParams}
+Remover antena
+
+Esta função tem como objetivo remover uma antena da lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas)\\
+\hline
+\end{DoxyParams}
+Deduzir efeito nefasto
+
+Esta função tem como objetivo deduzir o efeito nefasto da antena 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada \\
+\hline
+{\em lista\+Nefasto} & lista ligada de efeitos nefastos\\
+\hline
+\end{DoxyParams}
+Carregar grafo do ficheiro
+
+Esta função tem como objetivo carregar o grafo do ficheiro 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas\\
+\hline
+\end{DoxyParams}
+Listar antenas
+
+Esta função tem como objetivo listar as antenas registadas na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada\\
+\hline
+\end{DoxyParams}
+Listar arestas
+
+Esta função tem como objetivo listar as arestas do grafo 
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & grafo\\
+\hline
+\end{DoxyParams}
+Procura em Profundidade
+
+Esta função tem como objetivo fazer a listagem das adjacencias de cada antena (neste caso serão as antenas restantes) 
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Arestas} & Lista de arestas\\
+\hline
+\end{DoxyParams}

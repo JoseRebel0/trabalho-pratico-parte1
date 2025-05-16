@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Trabalho Prático Parte 1: Referência ao ficheiro Data/dados.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +36,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.12.0 -->
+<!-- Gerado por Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
@@ -99,17 +99,40 @@ $(function(){initNavTree('dados_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Estruturas de Dados</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Definições de tipos</a>  </div>
   <div class="headertitle"><div class="title">Referência ao ficheiro dados.h</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Ficheiro com as estruturas das antenas e do nefasto.  
+<p>Ficheiro com as estruturas das antenas.  
 <a href="#details">Mais...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;stdbool.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para dados.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="dados_8h__incl.png" border="0" usemap="#aData_2dados_8h" alt=""/></div>
+<map name="aData_2dados_8h" id="aData_2dados_8h">
+<area shape="rect" title="Ficheiro com as estruturas das antenas." alt="" coords="5,5,105,31"/>
+<area shape="rect" title=" " alt="" coords="18,79,92,105"/>
+<area shape="poly" title=" " alt="" coords="58,31,58,63,52,63,52,31"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro:</div>
 <div class="dyncontent">
 <div class="center"><img src="dados_8h__dep__incl.png" border="0" usemap="#aData_2dados_8hdep" alt=""/></div>
+<map name="aData_2dados_8hdep" id="aData_2dados_8hdep">
+<area shape="rect" title="Ficheiro com as estruturas das antenas." alt="" coords="95,5,194,31"/>
+<area shape="rect" href="funcoes_8h.html" title="Ficheiro com as definições das funções do menu." alt="" coords="75,79,214,105"/>
+<area shape="poly" title=" " alt="" coords="147,46,147,79,142,79,142,46"/>
+<area shape="rect" href="funcoes_8c.html" title="Ficheiro com as funções do menu." alt="" coords="5,153,145,178"/>
+<area shape="poly" title=" " alt="" coords="124,117,89,154,85,150,121,114"/>
+<area shape="rect" href="main_8h.html" title=" " alt="" coords="169,153,261,178"/>
+<area shape="poly" title=" " alt="" coords="169,114,205,150,201,154,165,117"/>
+<area shape="rect" href="main_8c.html" title="Ficheiro principal." alt="" coords="169,226,261,252"/>
+<area shape="poly" title=" " alt="" coords="218,194,218,226,212,226,212,194"/>
+</map>
 </div>
 </div>
 <p><a href="dados_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
@@ -120,8 +143,22 @@ Estruturas de Dados</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das antenas.  <a href="structAntena.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNefasto.html">Nefasto</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados do efeito nefasto.  <a href="structNefasto.html#details">Mais...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados dos efeitos nefastos.  <a href="structNefasto.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGR.html">GR</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados dos grafos.  <a href="structGR.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAdjacencia.html">Adjacencia</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das adjacências.  <a href="structAdjacencia.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAresta.html">Aresta</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das arestas.  <a href="structAresta.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a48974769d63c3783efacf8fb7c3487cf" id="r_a48974769d63c3783efacf8fb7c3487cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48974769d63c3783efacf8fb7c3487cf">X_Y</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a48974769d63c3783efacf8fb7c3487cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Definições de tipos</h2></td></tr>
@@ -129,13 +166,53 @@ Definições de tipos</h2></td></tr>
 <tr class="memdesc:a843ab8b81393e8ebb3eb6b76e349acc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das antenas.  <br /></td></tr>
 <tr class="separator:a843ab8b81393e8ebb3eb6b76e349acc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae690a2a29c460c7055653d2f38d277d4" id="r_ae690a2a29c460c7055653d2f38d277d4"><td class="memItemLeft" align="right" valign="top">typedef struct Nefasto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae690a2a29c460c7055653d2f38d277d4">Nefasto</a></td></tr>
-<tr class="memdesc:ae690a2a29c460c7055653d2f38d277d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados do efeito nefasto.  <br /></td></tr>
+<tr class="memdesc:ae690a2a29c460c7055653d2f38d277d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados dos efeitos nefastos.  <br /></td></tr>
 <tr class="separator:ae690a2a29c460c7055653d2f38d277d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673a73566a701f4c439ea07aafa902fd" id="r_a673a73566a701f4c439ea07aafa902fd"><td class="memItemLeft" align="right" valign="top">typedef struct GR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a673a73566a701f4c439ea07aafa902fd">GR</a></td></tr>
+<tr class="memdesc:a673a73566a701f4c439ea07aafa902fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados dos grafos.  <br /></td></tr>
+<tr class="separator:a673a73566a701f4c439ea07aafa902fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a707f5a55de6e25322735fd69b8a96" id="r_ad1a707f5a55de6e25322735fd69b8a96"><td class="memItemLeft" align="right" valign="top">typedef struct Adjacencia&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1a707f5a55de6e25322735fd69b8a96">Adjacencia</a></td></tr>
+<tr class="memdesc:ad1a707f5a55de6e25322735fd69b8a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das adjacências.  <br /></td></tr>
+<tr class="separator:ad1a707f5a55de6e25322735fd69b8a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dfeea32aaaf68604a93805ab84f33e1" id="r_a4dfeea32aaaf68604a93805ab84f33e1"><td class="memItemLeft" align="right" valign="top">typedef struct Aresta&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dfeea32aaaf68604a93805ab84f33e1">Aresta</a></td></tr>
+<tr class="memdesc:a4dfeea32aaaf68604a93805ab84f33e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados das arestas.  <br /></td></tr>
+<tr class="separator:a4dfeea32aaaf68604a93805ab84f33e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Ficheiro com as estruturas das antenas e do nefasto. </p>
-<dl class="section author"><dt>Autor</dt><dd>Jos� Rebelo </dd></dl>
-</div><h2 class="groupheader">Documentação dos tipos</h2>
+<div class="textblock"><p>Ficheiro com as estruturas das antenas. </p>
+<dl class="section author"><dt>Autor</dt><dd>José Rebelo </dd></dl>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a id="a48974769d63c3783efacf8fb7c3487cf" name="a48974769d63c3783efacf8fb7c3487cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48974769d63c3783efacf8fb7c3487cf">&#9670;&#160;</a></span>X_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define X_Y&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="ad1a707f5a55de6e25322735fd69b8a96" name="ad1a707f5a55de6e25322735fd69b8a96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a707f5a55de6e25322735fd69b8a96">&#9670;&#160;</a></span>Adjacencia</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Adjacencia Adjacencia</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estrutura de dados das adjacências. </p>
+
+</div>
+</div>
 <a id="a843ab8b81393e8ebb3eb6b76e349acc2" name="a843ab8b81393e8ebb3eb6b76e349acc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a843ab8b81393e8ebb3eb6b76e349acc2">&#9670;&#160;</a></span>Antena</h2>
 
@@ -152,6 +229,38 @@ Definições de tipos</h2></td></tr>
 
 </div>
 </div>
+<a id="a4dfeea32aaaf68604a93805ab84f33e1" name="a4dfeea32aaaf68604a93805ab84f33e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dfeea32aaaf68604a93805ab84f33e1">&#9670;&#160;</a></span>Aresta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Aresta Aresta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estrutura de dados das arestas. </p>
+
+</div>
+</div>
+<a id="a673a73566a701f4c439ea07aafa902fd" name="a673a73566a701f4c439ea07aafa902fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673a73566a701f4c439ea07aafa902fd">&#9670;&#160;</a></span>GR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct GR GR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estrutura de dados dos grafos. </p>
+
+</div>
+</div>
 <a id="ae690a2a29c460c7055653d2f38d277d4" name="ae690a2a29c460c7055653d2f38d277d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae690a2a29c460c7055653d2f38d277d4">&#9670;&#160;</a></span>Nefasto</h2>
 
@@ -164,7 +273,7 @@ Definições de tipos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Estrutura de dados do efeito nefasto. </p>
+<p>Estrutura de dados dos efeitos nefastos. </p>
 
 </div>
 </div>
@@ -174,7 +283,7 @@ Definições de tipos</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dados_8h.html">dados.h</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

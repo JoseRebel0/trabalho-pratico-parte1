@@ -1,0 +1,6 @@
+<map id="Antena" name="Antena">
+<area shape="rect" id="Node000001" title="Estrutura de dados das antenas." alt="" coords="17,94,79,120"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="97,98,106,107,97,116,80,118,79,112,95,111,101,107,93,102"/>
+<area shape="rect" id="Node000002" href="$structAdjacencia.html" title="Estrutura de dados das adjacências." alt="" coords="5,5,91,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,47,51,94,45,94,45,47"/>
+</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['listarantenas_0',['listarAntenas',['../funcoes_8c.html#ad8e25ea7e05f77d363c12d6f63e7ebde',1,'funcoes.c']]]
+  ['deduzirnefasto_0',['deduzirNefasto',['../funcoes_8c.html#a67869d474994adbd9c4fc06bd81eb1e1',1,'deduzirNefasto(Nefasto *listaNefasto, Antena *lista):&#160;funcoes.c'],['../funcoes_8h.html#a67869d474994adbd9c4fc06bd81eb1e1',1,'deduzirNefasto(Nefasto *listaNefasto, Antena *lista):&#160;funcoes.c']]]
 ];

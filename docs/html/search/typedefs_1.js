@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nefasto_0',['Nefasto',['../dados_8h.html#ae690a2a29c460c7055653d2f38d277d4',1,'dados.h']]]
+  ['gr_0',['GR',['../dados_8h.html#a673a73566a701f4c439ea07aafa902fd',1,'dados.h']]]
 ];

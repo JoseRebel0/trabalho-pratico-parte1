@@ -6,8 +6,17 @@ Ficheiro com as funções do menu.
 
 
 {\ttfamily \#include "{}funcoes.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
 Diagrama de dependências de inclusão para funcoes.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{funcoes_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,10 +24,20 @@ Diagrama de dependências de inclusão para funcoes.\+c\+:
 \begin{DoxyCompactList}\small\item\em Inclusão das bibliotecas necessárias. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a271cfc7165df8985a5defc51e624835b}{carregar\+Antenas\+Do\+Ficheiro}} (const char \texorpdfstring{$\ast$}{*}caminho\+Ficheiro)
 \begin{DoxyCompactList}\small\item\em Função de carregar as antenas do ficheiro. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{funcoes_8c_a2a73579b9e1d789e83111a292e835704}{remover\+Antena}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{menu_8c_aee5fb13367bf087f465382e6b9477acd}{lista}}, const char \texorpdfstring{$\ast$}{*}caminho\+Ficheiro, int x, int y)
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_aa1cdc1f00fc740dd0389e5b615b30c23}{remover\+Antena}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}}, int x, int y)
 \begin{DoxyCompactList}\small\item\em Função de remover as antenas da lista. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{funcoes_8c_ad8e25ea7e05f77d363c12d6f63e7ebde}{listar\+Antenas}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{menu_8c_aee5fb13367bf087f465382e6b9477acd}{lista}})
-\begin{DoxyCompactList}\small\item\em Função de listar as antenas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a67869d474994adbd9c4fc06bd81eb1e1}{deduzir\+Nefasto}} (\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}{lista\+Nefasto}}, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}})
+\begin{DoxyCompactList}\small\item\em Função de dedução de efeito nefasto. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_aa905d7197842901785c78975e1e2e07e}{listar\+Antenas}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}}, \mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}{lista\+Nefasto}})
+\begin{DoxyCompactList}\small\item\em Função de listar as antenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structAresta}{Aresta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a946426da76e755887603221b5b72bb5f}{criar\+Aresta}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}destino)
+\begin{DoxyCompactList}\small\item\em Função que cria uma aresta entre duas antenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e}{criar\+Grafo}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}})
+\begin{DoxyCompactList}\small\item\em Função que cria um grafo com base nas antenas. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_a45ab2c5582967793e4a61a4731748133}{listar\+Arestas}} (\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*}grafo)
+\begin{DoxyCompactList}\small\item\em Função de listar todas as arestas do grafo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8c_ac797acfab718d1f204c3734235f8dcec}{procura\+Profundo}} (\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*}grafo, int x, int y)
+\begin{DoxyCompactList}\small\item\em Função de Procura em profundidade. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrição detalhada}
@@ -75,11 +94,76 @@ Função de criar novas antenas
 \begin{DoxyReturn}{Retorna}
 Antena\texorpdfstring{$\ast$}{*} apontador para a nova antena 
 \end{DoxyReturn}
-\Hypertarget{funcoes_8c_ad8e25ea7e05f77d363c12d6f63e7ebde}\index{funcoes.c@{funcoes.c}!listarAntenas@{listarAntenas}}
+\Hypertarget{funcoes_8c_a946426da76e755887603221b5b72bb5f}\index{funcoes.c@{funcoes.c}!criarAresta@{criarAresta}}
+\index{criarAresta@{criarAresta}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{criarAresta()}{criarAresta()}}
+{\footnotesize\ttfamily \label{funcoes_8c_a946426da76e755887603221b5b72bb5f} 
+\mbox{\hyperlink{structAresta}{Aresta}} \texorpdfstring{$\ast$}{*} criar\+Aresta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{origem}{, }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{destino}{}\end{DoxyParamCaption})}
+
+
+
+Função que cria uma aresta entre duas antenas. 
+
+Função de criar arestas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em origem} & \doxylink{structAntena}{Antena} de origem \\
+\hline
+{\em destino} & \doxylink{structAntena}{Antena} de destino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Aresta\texorpdfstring{$\ast$}{*} Nova aresta criada 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e}\index{funcoes.c@{funcoes.c}!criarGrafo@{criarGrafo}}
+\index{criarGrafo@{criarGrafo}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{criarGrafo()}{criarGrafo()}}
+{\footnotesize\ttfamily \label{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e} 
+\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*} criar\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Função que cria um grafo com base nas antenas. 
+
+Função de criar grafos.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Lista ligada de antenas \\
+\hline
+{\em lista\+Arestas} & Lista ligada de arestas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+GR\texorpdfstring{$\ast$}{*} Grafo criado 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8c_a67869d474994adbd9c4fc06bd81eb1e1}\index{funcoes.c@{funcoes.c}!deduzirNefasto@{deduzirNefasto}}
+\index{deduzirNefasto@{deduzirNefasto}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{deduzirNefasto()}{deduzirNefasto()}}
+{\footnotesize\ttfamily \label{funcoes_8c_a67869d474994adbd9c4fc06bd81eb1e1} 
+\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*} deduzir\+Nefasto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista\+Nefasto}{, }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Função de dedução de efeito nefasto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas \\
+\hline
+{\em lista\+Nefasto} & lista ligada de efeitos nefastos \\
+\hline
+{\em x} & posição x da antena no ficheiro \\
+\hline
+{\em y} & posição y da antena no ficheiro \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8c_aa905d7197842901785c78975e1e2e07e}\index{funcoes.c@{funcoes.c}!listarAntenas@{listarAntenas}}
 \index{listarAntenas@{listarAntenas}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{listarAntenas()}{listarAntenas()}}
-{\footnotesize\ttfamily \label{funcoes_8c_ad8e25ea7e05f77d363c12d6f63e7ebde} 
-void listar\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{funcoes_8c_aa905d7197842901785c78975e1e2e07e} 
+char \texorpdfstring{$\ast$}{*} listar\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista\+Nefasto}{}\end{DoxyParamCaption})}
 
 
 
@@ -89,12 +173,52 @@ Função de listar as antenas.
 \begin{DoxyParams}{Parâmetros}
 {\em lista} & lista ligada de antenas \\
 \hline
+{\em lista\+Nefasto} & lista ligada de efeitos nefastos \\
+\hline
 \end{DoxyParams}
-\Hypertarget{funcoes_8c_a2a73579b9e1d789e83111a292e835704}\index{funcoes.c@{funcoes.c}!removerAntena@{removerAntena}}
+\Hypertarget{funcoes_8c_a45ab2c5582967793e4a61a4731748133}\index{funcoes.c@{funcoes.c}!listarArestas@{listarArestas}}
+\index{listarArestas@{listarArestas}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{listarArestas()}{listarArestas()}}
+{\footnotesize\ttfamily \label{funcoes_8c_a45ab2c5582967793e4a61a4731748133} 
+char \texorpdfstring{$\ast$}{*} listar\+Arestas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*}}]{grafo}{}\end{DoxyParamCaption})}
+
+
+
+Função de listar todas as arestas do grafo. 
+
+Função de listar as arestas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Ponteiro para o grafo \\
+\hline
+{\em atual} & \doxylink{structAresta}{Aresta} atual \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8c_ac797acfab718d1f204c3734235f8dcec}\index{funcoes.c@{funcoes.c}!procuraProfundo@{procuraProfundo}}
+\index{procuraProfundo@{procuraProfundo}!funcoes.c@{funcoes.c}}
+\doxysubsubsection{\texorpdfstring{procuraProfundo()}{procuraProfundo()}}
+{\footnotesize\ttfamily \label{funcoes_8c_ac797acfab718d1f204c3734235f8dcec} 
+\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*} procura\+Profundo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGR}{GR}} \texorpdfstring{$\ast$}{*}}]{grafo}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Função de Procura em profundidade. 
+
+Função de procura em profundidade.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Arestas} & Lista de arestas \\
+\hline
+{\em grafo} & Grafo \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8c_aa1cdc1f00fc740dd0389e5b615b30c23}\index{funcoes.c@{funcoes.c}!removerAntena@{removerAntena}}
 \index{removerAntena@{removerAntena}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{removerAntena()}{removerAntena()}}
-{\footnotesize\ttfamily \label{funcoes_8c_a2a73579b9e1d789e83111a292e835704} 
-void remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{caminho\+Ficheiro}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{funcoes_8c_aa1cdc1f00fc740dd0389e5b615b30c23} 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
 
 
 

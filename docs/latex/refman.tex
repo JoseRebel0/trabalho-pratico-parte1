@@ -136,7 +136,7 @@
   }
   % ToC, LoF, LoT, bibliography, and index
   % Indices & bibliography
-  \usepackage{natbib}
+  \usepackage[numbers]{natbib}
   \usepackage[titles]{tocloft}
   \setcounter{tocdepth}{3}
   \setcounter{secnumdepth}{5}
@@ -223,7 +223,7 @@
   {\Large Trabalho Prático Parte 1}\\
   [1ex]\large 1.\+0 \\
   \vspace*{1cm}
-  {\large Gerado por Doxygen 1.12.0}\\
+  {\large Gerado por Doxygen 1.13.2}\\
   \end{center}
   \end{titlepage}
   \clearemptydoublepage
@@ -239,7 +239,10 @@
 \chapter{Índice dos ficheiros}
 \input{files}
 \chapter{Documentação da estruturas de dados}
+\input{structAdjacencia}
 \input{structAntena}
+\input{structAresta}
+\input{structGR}
 \input{structNefasto}
 \chapter{Documentação do ficheiro}
 \input{dados_8h}
@@ -248,9 +251,8 @@
 \input{funcoes_8h}
 \input{funcoes_8h_source}
 \input{main_8c}
-\input{menu_8c}
-\input{menu_8h}
-\input{menu_8h_source}
+\input{main_8h}
+\input{main_8h_source}
 %--- End generated contents ---
 % Index
   \backmatter

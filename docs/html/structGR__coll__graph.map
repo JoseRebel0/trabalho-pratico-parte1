@@ -1,0 +1,12 @@
+<map id="GR" name="GR">
+<area shape="rect" id="Node000001" title="Estrutura de dados dos grafos." alt="" coords="27,286,69,312"/>
+<area shape="rect" id="Node000002" href="$structAntena.html" title="Estrutura de dados das antenas." alt="" coords="17,94,79,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,136,42,177,41,223,49,285,43,286,36,223,37,177,41,135"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="97,98,106,107,97,116,80,118,79,112,95,111,101,107,93,102"/>
+<area shape="rect" id="Node000004" href="$structAresta.html" title="Estrutura de dados das arestas." alt="" coords="78,198,138,223"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="65,131,103,196,99,199,60,134"/>
+<area shape="rect" id="Node000003" href="$structAdjacencia.html" title="Estrutura de dados das adjacências." alt="" coords="5,5,91,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="51,47,51,94,45,94,45,47"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="93,238,58,288,54,284,89,235"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="154,201,161,204,164,211,156,220,138,221,138,216,153,215,159,210,157,208,152,206"/>
+</map>

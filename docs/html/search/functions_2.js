@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['menu_1',['menu',['../menu_8c.html#a2a0e843767aeea4f433a28b9c54f573a',1,'menu():&#160;menu.c'],['../menu_8h.html#a2a0e843767aeea4f433a28b9c54f573a',1,'menu():&#160;menu.c']]]
+  ['listarantenas_0',['listarAntenas',['../funcoes_8c.html#aa905d7197842901785c78975e1e2e07e',1,'listarAntenas(Antena *lista, Nefasto *listaNefasto):&#160;funcoes.c'],['../funcoes_8h.html#aa905d7197842901785c78975e1e2e07e',1,'listarAntenas(Antena *lista, Nefasto *listaNefasto):&#160;funcoes.c']]],
+  ['listararestas_1',['listarArestas',['../funcoes_8c.html#a45ab2c5582967793e4a61a4731748133',1,'listarArestas(GR *grafo):&#160;funcoes.c'],['../funcoes_8h.html#a45ab2c5582967793e4a61a4731748133',1,'listarArestas(GR *grafo):&#160;funcoes.c']]]
 ];

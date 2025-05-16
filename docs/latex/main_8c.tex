@@ -2,22 +2,40 @@
 \hypertarget{main_8c}{}\label{main_8c}\index{Main/main.c@{Main/main.c}}
 
 
-Ficheiro principal (inclui o menu)  
+Ficheiro principal.  
 
 
+{\ttfamily \#include "{}main.\+h"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
 Diagrama de dependências de inclusão para main.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \begin{DoxyCompactList}\small\item\em Inclusão das bibliotecas necessárias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}} = NULL
+\begin{DoxyCompactList}\small\item\em Inclusão das bibliotecas necessárias. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNefasto}{Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}{lista\+Nefasto}} = NULL
+\item 
+\mbox{\hyperlink{structAresta}{Aresta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8c_acad6f18f1b00a100e01f95a74423bb96}{lista\+Arestas}} = NULL
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrição detalhada}
-Ficheiro principal (inclui o menu) 
+Ficheiro principal. 
 
 \begin{DoxyAuthor}{Autor}
 José Rebelo 
@@ -35,5 +53,116 @@ int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Inclusão das bibliotecas necessárias. 
 
-Função principal ~\newline
- 
+Definição da função de menu Criar antena
+
+Esta função tem como objetivo criar uma nova antena à lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas) \\
+\hline
+{\em frequencia} & frequência (A ou O)\\
+\hline
+\end{DoxyParams}
+Guardar dados das antenas
+
+Esta função tem como objetivo guardar os dados das antenas do ficheiro na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em lista} & lista ligada \\
+\hline
+{\em temp} & variável temporária para guardar a lista ligada\\
+\hline
+\end{DoxyParams}
+Carregar grafo do ficheiro
+
+Esta função tem como objetivo carregar o grafo do ficheiro 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas\\
+\hline
+\end{DoxyParams}
+Remover antena
+
+Esta função tem como objetivo remover uma antena da lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em caminho\+Ficheiro} & caminho do ficheiro (mantém-\/se sempre o mesmo) \\
+\hline
+{\em x} & posição x (colunas) \\
+\hline
+{\em y} & posição y (linhas)\\
+\hline
+\end{DoxyParams}
+Deduzir efeito nefasto
+
+Esta função tem como objetivo deduzir o efeito nefasto da antena 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada \\
+\hline
+{\em lista\+Nefasto} & lista ligada de efeitos nefastos\\
+\hline
+\end{DoxyParams}
+Carregar grafo do ficheiro
+
+Esta função tem como objetivo carregar o grafo do ficheiro 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas\\
+\hline
+\end{DoxyParams}
+Listar antenas
+
+Esta função tem como objetivo listar as antenas registadas na lista ligada 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada\\
+\hline
+\end{DoxyParams}
+Listar arestas
+
+Esta função tem como objetivo listar as arestas do grafo 
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & grafo\\
+\hline
+\end{DoxyParams}
+Procura em Profundidade
+
+Esta função tem como objetivo fazer a listagem das adjacencias de cada antena (neste caso serão as antenas restantes) 
+\begin{DoxyParams}{Parâmetros}
+{\em lista\+Arestas} & Lista de arestas\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das variáveis}
+\Hypertarget{main_8c_aee5fb13367bf087f465382e6b9477acd}\index{main.c@{main.c}!lista@{lista}}
+\index{lista@{lista}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{lista}{lista}}
+{\footnotesize\ttfamily \label{main_8c_aee5fb13367bf087f465382e6b9477acd} 
+\mbox{\hyperlink{structAntena}{Antena}}\texorpdfstring{$\ast$}{*} lista = NULL}
+
+
+
+Inclusão das bibliotecas necessárias. 
+
+Declaração das listas ligadas
+
+As antenas são de claradas vazias (NULL) porque começam vazias para serem preenchidas 
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & lista ligada de antenas \\
+\hline
+{\em lista\+Nefasto} & lista ligada de efeitos nefastos \\
+\hline
+{\em lista\+Arestas} & lista ligada de arestas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_acad6f18f1b00a100e01f95a74423bb96}\index{main.c@{main.c}!listaArestas@{listaArestas}}
+\index{listaArestas@{listaArestas}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{listaArestas}{listaArestas}}
+{\footnotesize\ttfamily \label{main_8c_acad6f18f1b00a100e01f95a74423bb96} 
+\mbox{\hyperlink{structAresta}{Aresta}}\texorpdfstring{$\ast$}{*} lista\+Arestas = NULL}
+
+\Hypertarget{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}\index{main.c@{main.c}!listaNefasto@{listaNefasto}}
+\index{listaNefasto@{listaNefasto}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{listaNefasto}{listaNefasto}}
+{\footnotesize\ttfamily \label{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92} 
+\mbox{\hyperlink{structNefasto}{Nefasto}}\texorpdfstring{$\ast$}{*} lista\+Nefasto = NULL}
+

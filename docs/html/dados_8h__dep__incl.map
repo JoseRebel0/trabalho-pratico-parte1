@@ -1,0 +1,11 @@
+<map id="Data/dados.h" name="Data/dados.h">
+<area shape="rect" id="Node000001" title="Ficheiro com as estruturas das antenas." alt="" coords="95,5,194,31"/>
+<area shape="rect" id="Node000002" href="$funcoes_8h.html" title="Ficheiro com as definições das funções do menu." alt="" coords="75,79,214,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,46,147,79,142,79,142,46"/>
+<area shape="rect" id="Node000003" href="$funcoes_8c.html" title="Ficheiro com as funções do menu." alt="" coords="5,153,145,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,117,89,154,85,150,121,114"/>
+<area shape="rect" id="Node000004" href="$main_8h.html" title=" " alt="" coords="169,153,261,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,114,205,150,201,154,165,117"/>
+<area shape="rect" id="Node000005" href="$main_8c.html" title="Ficheiro principal." alt="" coords="169,226,261,252"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="218,194,218,226,212,226,212,194"/>
+</map>

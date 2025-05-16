@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frequencia_0',['frequencia',['../structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41',1,'Antena']]]
+  ['adjacencias_0',['adjacencias',['../structAntena.html#a4cf241e0af0c9c48073a58861befa414',1,'Antena']]]
 ];

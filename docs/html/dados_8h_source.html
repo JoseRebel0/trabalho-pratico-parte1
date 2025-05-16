@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Trabalho Prático Parte 1: Código-Fonte de Data/dados.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +36,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.12.0 -->
+<!-- Gerado por Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
@@ -100,41 +100,100 @@ $(function(){initNavTree('dados_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">dados.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="dados_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structAntena.html">   10</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">   11</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">x</a>; <span class="comment">//posi��o x</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">   12</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">y</a>; <span class="comment">//posi��o y</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">   13</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">frequencia</a>; <span class="comment">//frequ�ncia (A ou O)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">   14</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">prox</a>; <span class="comment">//apontador para a pr�xima antena</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="dados_8h.html#a843ab8b81393e8ebb3eb6b76e349acc2">   15</a></span>} <a class="code hl_typedef" href="dados_8h.html#a843ab8b81393e8ebb3eb6b76e349acc2">Antena</a>;</div>
+<a href="dados_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef DADOS_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define DADOS_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;stdbool.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="dados_8h.html#a48974769d63c3783efacf8fb7c3487cf">   13</a></span><span class="preprocessor">#define X_Y 1</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structAntena.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">x</a>; <span class="comment">//posição x</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">   21</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">y</a>; <span class="comment">//posição y</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">   22</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">frequencia</a>; <span class="comment">//frequência (A ou O)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structAntena.html#a4cf241e0af0c9c48073a58861befa414">   23</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAdjacencia.html">Adjacencia</a>* <a class="code hl_variable" href="structAntena.html#a4cf241e0af0c9c48073a58861befa414">adjacencias</a>; <span class="comment">//apontador para a lista de adjacências</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structAntena.html#a25676b23c83ec3094b9a2f7754c8cb68">   24</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structAntena.html#a25676b23c83ec3094b9a2f7754c8cb68">visitada</a>; <span class="comment">//se a antena foi visitada ou não</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">   25</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">prox</a>; <span class="comment">//apontador para a próxima antena</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="dados_8h.html#a843ab8b81393e8ebb3eb6b76e349acc2">   27</a></span>} <a class="code hl_struct" href="structAntena.html">Antena</a>;</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structNefasto.html">   20</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structNefasto.html">Nefasto</a>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">   21</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">x</a>; <span class="comment">//posi��o x</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">   22</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">y</a>; <span class="comment">//posi��o y</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">   23</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNefasto.html">Nefasto</a>* <a class="code hl_variable" href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">prox</a>; <span class="comment">// apontador para o pr�ximo efeito</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="dados_8h.html#ae690a2a29c460c7055653d2f38d277d4">   24</a></span>} <a class="code hl_typedef" href="dados_8h.html#ae690a2a29c460c7055653d2f38d277d4">Nefasto</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structNefasto.html">   32</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structNefasto.html">Nefasto</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">   34</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">x</a>; <span class="comment">//posição x</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">y</a>; <span class="comment">//posição y</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structNefasto.html#a85f5702a401e688929077f45c99f64e7">   36</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structNefasto.html#a85f5702a401e688929077f45c99f64e7">frequencia</a>; <span class="comment">//frequência (A ou O)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">   37</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNefasto.html">Nefasto</a>* <a class="code hl_variable" href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">prox</a>; <span class="comment">//apontador para o próximo efeito nefasto</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="dados_8h.html#ae690a2a29c460c7055653d2f38d277d4">   39</a></span>} <a class="code hl_struct" href="structNefasto.html">Nefasto</a>;</div>
 </div>
-<div class="ttc" id="adados_8h_html_a843ab8b81393e8ebb3eb6b76e349acc2"><div class="ttname"><a href="dados_8h.html#a843ab8b81393e8ebb3eb6b76e349acc2">Antena</a></div><div class="ttdeci">struct Antena Antena</div><div class="ttdoc">Estrutura de dados das antenas.</div></div>
-<div class="ttc" id="adados_8h_html_ae690a2a29c460c7055653d2f38d277d4"><div class="ttname"><a href="dados_8h.html#ae690a2a29c460c7055653d2f38d277d4">Nefasto</a></div><div class="ttdeci">struct Nefasto Nefasto</div><div class="ttdoc">Estrutura de dados do efeito nefasto.</div></div>
-<div class="ttc" id="astructAntena_html"><div class="ttname"><a href="structAntena.html">Antena</a></div><div class="ttdoc">Estrutura de dados das antenas.</div><div class="ttdef"><b>Definição</b> dados.h:10</div></div>
-<div class="ttc" id="astructAntena_html_a20010d47a4aa05eee8fd6412a96e0b69"><div class="ttname"><a href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">Antena::prox</a></div><div class="ttdeci">struct Antena * prox</div><div class="ttdef"><b>Definição</b> dados.h:14</div></div>
-<div class="ttc" id="astructAntena_html_a3b196deb45a500d432ef7f7a653adbaf"><div class="ttname"><a href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">Antena::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definição</b> dados.h:11</div></div>
-<div class="ttc" id="astructAntena_html_a7166c31d6fd9c3607b300ee0dc6371ba"><div class="ttname"><a href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">Antena::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definição</b> dados.h:12</div></div>
-<div class="ttc" id="astructAntena_html_a98d94cd90b6d9288fc867dbe7a6b6f41"><div class="ttname"><a href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">Antena::frequencia</a></div><div class="ttdeci">char frequencia</div><div class="ttdef"><b>Definição</b> dados.h:13</div></div>
-<div class="ttc" id="astructNefasto_html"><div class="ttname"><a href="structNefasto.html">Nefasto</a></div><div class="ttdoc">Estrutura de dados do efeito nefasto.</div><div class="ttdef"><b>Definição</b> dados.h:20</div></div>
-<div class="ttc" id="astructNefasto_html_a2e66dd45c057a1126343c936655992b6"><div class="ttname"><a href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">Nefasto::prox</a></div><div class="ttdeci">struct Nefasto * prox</div><div class="ttdef"><b>Definição</b> dados.h:23</div></div>
-<div class="ttc" id="astructNefasto_html_aa87cbe26a1d2e491c5f52a16cdcddf8e"><div class="ttname"><a href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">Nefasto::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definição</b> dados.h:22</div></div>
-<div class="ttc" id="astructNefasto_html_aabf5cd10f98572d15b8d031322f66aba"><div class="ttname"><a href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">Nefasto::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definição</b> dados.h:21</div></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structGR.html">   44</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structGR.html">GR</a>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structGR.html#abb7d26ecdf8a6f35b71b2ca2b9efb8a4">   46</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="structGR.html#abb7d26ecdf8a6f35b71b2ca2b9efb8a4">lista</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structGR.html#a83e8c65b5e6fc096c3cca2d900c501f9">   47</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAresta.html">Aresta</a>* <a class="code hl_variable" href="structGR.html#a83e8c65b5e6fc096c3cca2d900c501f9">listaArestas</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="dados_8h.html#a673a73566a701f4c439ea07aafa902fd">   49</a></span>} <a class="code hl_struct" href="structGR.html">GR</a>;</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structAdjacencia.html">   54</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structAdjacencia.html">Adjacencia</a>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structAdjacencia.html#ac7d9be5fabcf540ad9d192d96a9e740a">   56</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structAdjacencia.html#ac7d9be5fabcf540ad9d192d96a9e740a">distancia</a>; <span class="comment">//distância entre as antenas</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="dados_8h.html#ad1a707f5a55de6e25322735fd69b8a96">   58</a></span>} <a class="code hl_struct" href="structAdjacencia.html">Adjacencia</a>;</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structAresta.html">   65</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structAresta.html">Aresta</a>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structAresta.html#a20bc33bb4baf5eb04cf6fe206037f1ee">   67</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="structAresta.html#a20bc33bb4baf5eb04cf6fe206037f1ee">origem</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structAresta.html#a536469e71d455d12fc4d175aced3478c">   68</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="structAresta.html#a536469e71d455d12fc4d175aced3478c">destino</a>; </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structAresta.html#a9a0dbe60945590437bb155b64632f411">   69</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structAresta.html">Aresta</a>* <a class="code hl_variable" href="structAresta.html#a9a0dbe60945590437bb155b64632f411">prox</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structAresta.html#a5af4a18fe648a570995127a3f2e89f5f">   70</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structAresta.html#a5af4a18fe648a570995127a3f2e89f5f">distancia</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="dados_8h.html#a4dfeea32aaaf68604a93805ab84f33e1">   72</a></span>} <a class="code hl_struct" href="structAresta.html">Aresta</a>;</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructAdjacencia_html"><div class="ttname"><a href="structAdjacencia.html">Adjacencia</a></div><div class="ttdoc">Estrutura de dados das adjacências.</div><div class="ttdef"><b>Definição</b> dados.h:54</div></div>
+<div class="ttc" id="astructAdjacencia_html_ac7d9be5fabcf540ad9d192d96a9e740a"><div class="ttname"><a href="structAdjacencia.html#ac7d9be5fabcf540ad9d192d96a9e740a">Adjacencia::distancia</a></div><div class="ttdeci">int distancia</div><div class="ttdef"><b>Definição</b> dados.h:56</div></div>
+<div class="ttc" id="astructAntena_html"><div class="ttname"><a href="structAntena.html">Antena</a></div><div class="ttdoc">Estrutura de dados das antenas.</div><div class="ttdef"><b>Definição</b> dados.h:18</div></div>
+<div class="ttc" id="astructAntena_html_a20010d47a4aa05eee8fd6412a96e0b69"><div class="ttname"><a href="structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69">Antena::prox</a></div><div class="ttdeci">struct Antena * prox</div><div class="ttdef"><b>Definição</b> dados.h:25</div></div>
+<div class="ttc" id="astructAntena_html_a25676b23c83ec3094b9a2f7754c8cb68"><div class="ttname"><a href="structAntena.html#a25676b23c83ec3094b9a2f7754c8cb68">Antena::visitada</a></div><div class="ttdeci">bool visitada</div><div class="ttdef"><b>Definição</b> dados.h:24</div></div>
+<div class="ttc" id="astructAntena_html_a3b196deb45a500d432ef7f7a653adbaf"><div class="ttname"><a href="structAntena.html#a3b196deb45a500d432ef7f7a653adbaf">Antena::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definição</b> dados.h:20</div></div>
+<div class="ttc" id="astructAntena_html_a4cf241e0af0c9c48073a58861befa414"><div class="ttname"><a href="structAntena.html#a4cf241e0af0c9c48073a58861befa414">Antena::adjacencias</a></div><div class="ttdeci">struct Adjacencia * adjacencias</div><div class="ttdef"><b>Definição</b> dados.h:23</div></div>
+<div class="ttc" id="astructAntena_html_a7166c31d6fd9c3607b300ee0dc6371ba"><div class="ttname"><a href="structAntena.html#a7166c31d6fd9c3607b300ee0dc6371ba">Antena::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definição</b> dados.h:21</div></div>
+<div class="ttc" id="astructAntena_html_a98d94cd90b6d9288fc867dbe7a6b6f41"><div class="ttname"><a href="structAntena.html#a98d94cd90b6d9288fc867dbe7a6b6f41">Antena::frequencia</a></div><div class="ttdeci">char frequencia</div><div class="ttdef"><b>Definição</b> dados.h:22</div></div>
+<div class="ttc" id="astructAresta_html"><div class="ttname"><a href="structAresta.html">Aresta</a></div><div class="ttdoc">Estrutura de dados das arestas.</div><div class="ttdef"><b>Definição</b> dados.h:65</div></div>
+<div class="ttc" id="astructAresta_html_a20bc33bb4baf5eb04cf6fe206037f1ee"><div class="ttname"><a href="structAresta.html#a20bc33bb4baf5eb04cf6fe206037f1ee">Aresta::origem</a></div><div class="ttdeci">struct Antena * origem</div><div class="ttdef"><b>Definição</b> dados.h:67</div></div>
+<div class="ttc" id="astructAresta_html_a536469e71d455d12fc4d175aced3478c"><div class="ttname"><a href="structAresta.html#a536469e71d455d12fc4d175aced3478c">Aresta::destino</a></div><div class="ttdeci">struct Antena * destino</div><div class="ttdef"><b>Definição</b> dados.h:68</div></div>
+<div class="ttc" id="astructAresta_html_a5af4a18fe648a570995127a3f2e89f5f"><div class="ttname"><a href="structAresta.html#a5af4a18fe648a570995127a3f2e89f5f">Aresta::distancia</a></div><div class="ttdeci">float distancia</div><div class="ttdef"><b>Definição</b> dados.h:70</div></div>
+<div class="ttc" id="astructAresta_html_a9a0dbe60945590437bb155b64632f411"><div class="ttname"><a href="structAresta.html#a9a0dbe60945590437bb155b64632f411">Aresta::prox</a></div><div class="ttdeci">struct Aresta * prox</div><div class="ttdef"><b>Definição</b> dados.h:69</div></div>
+<div class="ttc" id="astructGR_html"><div class="ttname"><a href="structGR.html">GR</a></div><div class="ttdoc">Estrutura de dados dos grafos.</div><div class="ttdef"><b>Definição</b> dados.h:44</div></div>
+<div class="ttc" id="astructGR_html_a83e8c65b5e6fc096c3cca2d900c501f9"><div class="ttname"><a href="structGR.html#a83e8c65b5e6fc096c3cca2d900c501f9">GR::listaArestas</a></div><div class="ttdeci">struct Aresta * listaArestas</div><div class="ttdef"><b>Definição</b> dados.h:47</div></div>
+<div class="ttc" id="astructGR_html_abb7d26ecdf8a6f35b71b2ca2b9efb8a4"><div class="ttname"><a href="structGR.html#abb7d26ecdf8a6f35b71b2ca2b9efb8a4">GR::lista</a></div><div class="ttdeci">struct Antena * lista</div><div class="ttdef"><b>Definição</b> dados.h:46</div></div>
+<div class="ttc" id="astructNefasto_html"><div class="ttname"><a href="structNefasto.html">Nefasto</a></div><div class="ttdoc">Estrutura de dados dos efeitos nefastos.</div><div class="ttdef"><b>Definição</b> dados.h:32</div></div>
+<div class="ttc" id="astructNefasto_html_a2e66dd45c057a1126343c936655992b6"><div class="ttname"><a href="structNefasto.html#a2e66dd45c057a1126343c936655992b6">Nefasto::prox</a></div><div class="ttdeci">struct Nefasto * prox</div><div class="ttdef"><b>Definição</b> dados.h:37</div></div>
+<div class="ttc" id="astructNefasto_html_a85f5702a401e688929077f45c99f64e7"><div class="ttname"><a href="structNefasto.html#a85f5702a401e688929077f45c99f64e7">Nefasto::frequencia</a></div><div class="ttdeci">char frequencia</div><div class="ttdef"><b>Definição</b> dados.h:36</div></div>
+<div class="ttc" id="astructNefasto_html_aa87cbe26a1d2e491c5f52a16cdcddf8e"><div class="ttname"><a href="structNefasto.html#aa87cbe26a1d2e491c5f52a16cdcddf8e">Nefasto::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definição</b> dados.h:35</div></div>
+<div class="ttc" id="astructNefasto_html_aabf5cd10f98572d15b8d031322f66aba"><div class="ttname"><a href="structNefasto.html#aabf5cd10f98572d15b8d031322f66aba">Nefasto::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definição</b> dados.h:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e3d743d0ec9b4013b28b5d69101bc7fb.html">Data</a></li><li class="navelem"><a class="el" href="dados_8h.html">dados.h</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

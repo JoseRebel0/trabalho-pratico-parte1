@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prox_0',['prox',['../structAntena.html#a20010d47a4aa05eee8fd6412a96e0b69',1,'Antena::prox'],['../structNefasto.html#a2e66dd45c057a1126343c936655992b6',1,'Nefasto::prox']]]
+  ['nefasto_0',['Nefasto',['../structNefasto.html',1,'Nefasto'],['../dados_8h.html#ae690a2a29c460c7055653d2f38d277d4',1,'Nefasto:&#160;dados.h']]]
 ];

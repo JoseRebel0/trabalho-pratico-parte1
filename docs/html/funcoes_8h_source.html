@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Trabalho Prático Parte 1: Código-Fonte de Functions/funcoes.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +36,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.12.0 -->
+<!-- Gerado por Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
@@ -100,35 +100,57 @@ $(function(){initNavTree('funcoes_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">funcoes.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="funcoes_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="dados_8h.html">../Data/dados.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<a href="funcoes_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="dados_8h.html">../Data/dados.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma region Funções do menu</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_function" href="funcoes_8h.html#af76ca1c6ef0441952e3dc481b1fe437a">criarAntena</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> frequencia);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma region Funções do menu</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_function" href="funcoes_8h.html#af76ca1c6ef0441952e3dc481b1fe437a">criarAntena</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> frequencia);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="funcoes_8h.html#a2a73579b9e1d789e83111a292e835704">removerAntena</a>(<a class="code hl_struct" href="structAntena.html">Antena</a>** <a class="code hl_variable" href="menu_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* caminhoFicheiro, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_function" href="funcoes_8h.html#aa1cdc1f00fc740dd0389e5b615b30c23">removerAntena</a>(<a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="main_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a>, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_function" href="funcoes_8h.html#a271cfc7165df8985a5defc51e624835b">carregarAntenasDoFicheiro</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* caminhoFicheiro);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#pragma endregion</span></div>
-<div class="ttc" id="adados_8h_html"><div class="ttname"><a href="dados_8h.html">dados.h</a></div><div class="ttdoc">Ficheiro com as estruturas das antenas e do nefasto.</div></div>
-<div class="ttc" id="afuncoes_8h_html_a271cfc7165df8985a5defc51e624835b"><div class="ttname"><a href="funcoes_8h.html#a271cfc7165df8985a5defc51e624835b">carregarAntenasDoFicheiro</a></div><div class="ttdeci">Antena * carregarAntenasDoFicheiro(const char *caminhoFicheiro)</div><div class="ttdoc">Função de carregar as antenas do ficheiro.</div><div class="ttdef"><b>Definição</b> funcoes.c:49</div></div>
-<div class="ttc" id="afuncoes_8h_html_a2a73579b9e1d789e83111a292e835704"><div class="ttname"><a href="funcoes_8h.html#a2a73579b9e1d789e83111a292e835704">removerAntena</a></div><div class="ttdeci">void removerAntena(Antena **lista, const char *caminhoFicheiro, int x, int y)</div><div class="ttdoc">Função de remover as antenas do ficheiro e da lista.</div><div class="ttdef"><b>Definição</b> funcoes.c:101</div></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_function" href="funcoes_8h.html#a271cfc7165df8985a5defc51e624835b">carregarAntenasDoFicheiro</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* caminhoFicheiro);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="funcoes_8h.html#aa905d7197842901785c78975e1e2e07e">listarAntenas</a>(<a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="main_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a>, <a class="code hl_struct" href="structNefasto.html">Nefasto</a>* <a class="code hl_variable" href="main_8c.html#a6f8261722f09c4b05cc5cb4c453d1f92">listaNefasto</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><a class="code hl_struct" href="structNefasto.html">Nefasto</a>* <a class="code hl_function" href="funcoes_8h.html#a67869d474994adbd9c4fc06bd81eb1e1">deduzirNefasto</a>(<a class="code hl_struct" href="structNefasto.html">Nefasto</a>* <a class="code hl_variable" href="main_8c.html#a6f8261722f09c4b05cc5cb4c453d1f92">listaNefasto</a>, <a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="main_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a>); </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><a class="code hl_struct" href="structGR.html">GR</a>* <a class="code hl_function" href="funcoes_8h.html#a7cc39df6c8f347e03986821e5024dd2e">criarGrafo</a>(<a class="code hl_struct" href="structAntena.html">Antena</a>* <a class="code hl_variable" href="main_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="structAresta.html">Aresta</a>* <a class="code hl_function" href="funcoes_8h.html#a946426da76e755887603221b5b72bb5f">criarAresta</a>(<a class="code hl_struct" href="structAntena.html">Antena</a>* origem, <a class="code hl_struct" href="structAntena.html">Antena</a>* destino);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">char</span>* <a class="code hl_function" href="funcoes_8h.html#a45ab2c5582967793e4a61a4731748133">listarArestas</a>(<a class="code hl_struct" href="structGR.html">GR</a>* grafo);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="structGR.html">GR</a>* <a class="code hl_function" href="funcoes_8h.html#ac797acfab718d1f204c3734235f8dcec">procuraProfundo</a>(<a class="code hl_struct" href="structGR.html">GR</a>* grafo, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="ttc" id="adados_8h_html"><div class="ttname"><a href="dados_8h.html">dados.h</a></div><div class="ttdoc">Ficheiro com as estruturas das antenas.</div></div>
+<div class="ttc" id="afuncoes_8h_html_a271cfc7165df8985a5defc51e624835b"><div class="ttname"><a href="funcoes_8h.html#a271cfc7165df8985a5defc51e624835b">carregarAntenasDoFicheiro</a></div><div class="ttdeci">Antena * carregarAntenasDoFicheiro(const char *caminhoFicheiro)</div><div class="ttdoc">Função de carregar as antenas do ficheiro.</div><div class="ttdef"><b>Definição</b> funcoes.c:50</div></div>
+<div class="ttc" id="afuncoes_8h_html_a45ab2c5582967793e4a61a4731748133"><div class="ttname"><a href="funcoes_8h.html#a45ab2c5582967793e4a61a4731748133">listarArestas</a></div><div class="ttdeci">char * listarArestas(GR *grafo)</div><div class="ttdoc">Função de listar as arestas.</div><div class="ttdef"><b>Definição</b> funcoes.c:279</div></div>
+<div class="ttc" id="afuncoes_8h_html_a67869d474994adbd9c4fc06bd81eb1e1"><div class="ttname"><a href="funcoes_8h.html#a67869d474994adbd9c4fc06bd81eb1e1">deduzirNefasto</a></div><div class="ttdeci">Nefasto * deduzirNefasto(Nefasto *listaNefasto, Antena *lista)</div><div class="ttdoc">Função de dedução de efeito nefasto.</div><div class="ttdef"><b>Definição</b> funcoes.c:140</div></div>
+<div class="ttc" id="afuncoes_8h_html_a7cc39df6c8f347e03986821e5024dd2e"><div class="ttname"><a href="funcoes_8h.html#a7cc39df6c8f347e03986821e5024dd2e">criarGrafo</a></div><div class="ttdeci">GR * criarGrafo(Antena *lista)</div><div class="ttdoc">Função de criar grafos.</div><div class="ttdef"><b>Definição</b> funcoes.c:238</div></div>
+<div class="ttc" id="afuncoes_8h_html_a946426da76e755887603221b5b72bb5f"><div class="ttname"><a href="funcoes_8h.html#a946426da76e755887603221b5b72bb5f">criarAresta</a></div><div class="ttdeci">Aresta * criarAresta(Antena *origem, Antena *destino)</div><div class="ttdoc">Função de criar arestas.</div><div class="ttdef"><b>Definição</b> funcoes.c:215</div></div>
+<div class="ttc" id="afuncoes_8h_html_aa1cdc1f00fc740dd0389e5b615b30c23"><div class="ttname"><a href="funcoes_8h.html#aa1cdc1f00fc740dd0389e5b615b30c23">removerAntena</a></div><div class="ttdeci">Antena * removerAntena(Antena *lista, int x, int y)</div><div class="ttdoc">Função de remover as antenas do ficheiro e da lista.</div><div class="ttdef"><b>Definição</b> funcoes.c:99</div></div>
+<div class="ttc" id="afuncoes_8h_html_aa905d7197842901785c78975e1e2e07e"><div class="ttname"><a href="funcoes_8h.html#aa905d7197842901785c78975e1e2e07e">listarAntenas</a></div><div class="ttdeci">char * listarAntenas(Antena *lista, Nefasto *listaNefasto)</div><div class="ttdoc">Função de listar as antenas.</div><div class="ttdef"><b>Definição</b> funcoes.c:177</div></div>
+<div class="ttc" id="afuncoes_8h_html_ac797acfab718d1f204c3734235f8dcec"><div class="ttname"><a href="funcoes_8h.html#ac797acfab718d1f204c3734235f8dcec">procuraProfundo</a></div><div class="ttdeci">GR * procuraProfundo(GR *grafo, int x, int y)</div><div class="ttdoc">Função de procura em profundidade.</div><div class="ttdef"><b>Definição</b> funcoes.c:309</div></div>
 <div class="ttc" id="afuncoes_8h_html_af76ca1c6ef0441952e3dc481b1fe437a"><div class="ttname"><a href="funcoes_8h.html#af76ca1c6ef0441952e3dc481b1fe437a">criarAntena</a></div><div class="ttdeci">Antena * criarAntena(int x, int y, char frequencia)</div><div class="ttdoc">Função de criar novas antenas.</div><div class="ttdef"><b>Definição</b> funcoes.c:24</div></div>
-<div class="ttc" id="amenu_8c_html_aee5fb13367bf087f465382e6b9477acd"><div class="ttname"><a href="menu_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a></div><div class="ttdeci">Antena * lista</div><div class="ttdoc">Inclusão das bibliotecas necessárias.</div><div class="ttdef"><b>Definição</b> menu.c:20</div></div>
-<div class="ttc" id="astructAntena_html"><div class="ttname"><a href="structAntena.html">Antena</a></div><div class="ttdoc">Estrutura de dados das antenas.</div><div class="ttdef"><b>Definição</b> dados.h:10</div></div>
+<div class="ttc" id="amain_8c_html_a6f8261722f09c4b05cc5cb4c453d1f92"><div class="ttname"><a href="main_8c.html#a6f8261722f09c4b05cc5cb4c453d1f92">listaNefasto</a></div><div class="ttdeci">Nefasto * listaNefasto</div><div class="ttdef"><b>Definição</b> main.c:28</div></div>
+<div class="ttc" id="amain_8c_html_aee5fb13367bf087f465382e6b9477acd"><div class="ttname"><a href="main_8c.html#aee5fb13367bf087f465382e6b9477acd">lista</a></div><div class="ttdeci">Antena * lista</div><div class="ttdoc">Inclusão das bibliotecas necessárias.</div><div class="ttdef"><b>Definição</b> main.c:27</div></div>
+<div class="ttc" id="astructAntena_html"><div class="ttname"><a href="structAntena.html">Antena</a></div><div class="ttdoc">Estrutura de dados das antenas.</div><div class="ttdef"><b>Definição</b> dados.h:18</div></div>
+<div class="ttc" id="astructAresta_html"><div class="ttname"><a href="structAresta.html">Aresta</a></div><div class="ttdoc">Estrutura de dados das arestas.</div><div class="ttdef"><b>Definição</b> dados.h:65</div></div>
+<div class="ttc" id="astructGR_html"><div class="ttname"><a href="structGR.html">GR</a></div><div class="ttdoc">Estrutura de dados dos grafos.</div><div class="ttdef"><b>Definição</b> dados.h:44</div></div>
+<div class="ttc" id="astructNefasto_html"><div class="ttname"><a href="structNefasto.html">Nefasto</a></div><div class="ttdoc">Estrutura de dados dos efeitos nefastos.</div><div class="ttdef"><b>Definição</b> dados.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_300faf08c8fb8933ad9035892dcb9a31.html">Functions</a></li><li class="navelem"><a class="el" href="funcoes_8h.html">funcoes.h</a></li>
-    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

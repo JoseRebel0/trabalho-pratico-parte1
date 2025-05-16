@@ -12,7 +12,13 @@ Estrutura de dados das antenas.
 
 
 Diagrama de colaboração para Antena\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{structAntena__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Campos de Dados}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,6 +28,10 @@ int \mbox{\hyperlink{structAntena_a7166c31d6fd9c3607b300ee0dc6371ba}{y}}
 \item 
 char \mbox{\hyperlink{structAntena_a98d94cd90b6d9288fc867dbe7a6b6f41}{frequencia}}
 \item 
+struct \mbox{\hyperlink{structAdjacencia}{Adjacencia}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structAntena_a4cf241e0af0c9c48073a58861befa414}{adjacencias}}
+\item 
+bool \mbox{\hyperlink{structAntena_a25676b23c83ec3094b9a2f7754c8cb68}{visitada}}
+\item 
 struct \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structAntena_a20010d47a4aa05eee8fd6412a96e0b69}{prox}}
 \end{DoxyCompactItemize}
 
@@ -30,6 +40,12 @@ struct \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{
 Estrutura de dados das antenas. 
 
 \doxysubsection{Documentação dos campos e atributos}
+\Hypertarget{structAntena_a4cf241e0af0c9c48073a58861befa414}\index{Antena@{Antena}!adjacencias@{adjacencias}}
+\index{adjacencias@{adjacencias}!Antena@{Antena}}
+\doxysubsubsection{\texorpdfstring{adjacencias}{adjacencias}}
+{\footnotesize\ttfamily \label{structAntena_a4cf241e0af0c9c48073a58861befa414} 
+struct \mbox{\hyperlink{structAdjacencia}{Adjacencia}}\texorpdfstring{$\ast$}{*} Antena\+::adjacencias}
+
 \Hypertarget{structAntena_a98d94cd90b6d9288fc867dbe7a6b6f41}\index{Antena@{Antena}!frequencia@{frequencia}}
 \index{frequencia@{frequencia}!Antena@{Antena}}
 \doxysubsubsection{\texorpdfstring{frequencia}{frequencia}}
@@ -41,6 +57,12 @@ char Antena\+::frequencia}
 \doxysubsubsection{\texorpdfstring{prox}{prox}}
 {\footnotesize\ttfamily \label{structAntena_a20010d47a4aa05eee8fd6412a96e0b69} 
 struct \mbox{\hyperlink{structAntena}{Antena}}\texorpdfstring{$\ast$}{*} Antena\+::prox}
+
+\Hypertarget{structAntena_a25676b23c83ec3094b9a2f7754c8cb68}\index{Antena@{Antena}!visitada@{visitada}}
+\index{visitada@{visitada}!Antena@{Antena}}
+\doxysubsubsection{\texorpdfstring{visitada}{visitada}}
+{\footnotesize\ttfamily \label{structAntena_a25676b23c83ec3094b9a2f7754c8cb68} 
+bool Antena\+::visitada}
 
 \Hypertarget{structAntena_a3b196deb45a500d432ef7f7a653adbaf}\index{Antena@{Antena}!x@{x}}
 \index{x@{x}!Antena@{Antena}}

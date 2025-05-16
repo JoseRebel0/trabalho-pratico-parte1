@@ -3,20 +3,32 @@
 \mbox{\hyperlink{funcoes_8h}{Ir para a documentação deste ficheiro.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dados_8h}{../Data/dados.h}}"{}}}
-\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dados_8h}{../Data/dados.h}}"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ region\ Funções\ do\ menu}}
-\DoxyCodeLine{00013\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{funcoes_8h_af76ca1c6ef0441952e3dc481b1fe437a}{criarAntena}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ frequencia);}
-\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#pragma\ region\ Funções\ do\ menu}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00014\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{funcoes_8h_af76ca1c6ef0441952e3dc481b1fe437a}{criarAntena}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ frequencia);}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{funcoes_8h_a2a73579b9e1d789e83111a292e835704}{removerAntena}}(\mbox{\hyperlink{structAntena}{Antena}}**\ \mbox{\hyperlink{menu_8c_aee5fb13367bf087f465382e6b9477acd}{lista}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ caminhoFicheiro,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{funcoes_8h_aa1cdc1f00fc740dd0389e5b615b30c23}{removerAntena}}(\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}},\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00025\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{funcoes_8h_a271cfc7165df8985a5defc51e624835b}{carregarAntenasDoFicheiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ caminhoFicheiro);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{funcoes_8h_a271cfc7165df8985a5defc51e624835b}{carregarAntenasDoFicheiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ caminhoFicheiro);}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00032\ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{funcoes_8h_aa905d7197842901785c78975e1e2e07e}{listarAntenas}}(\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}},\ \mbox{\hyperlink{structNefasto}{Nefasto}}*\ \mbox{\hyperlink{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}{listaNefasto}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \mbox{\hyperlink{structNefasto}{Nefasto}}*\ \mbox{\hyperlink{funcoes_8h_a67869d474994adbd9c4fc06bd81eb1e1}{deduzirNefasto}}(\mbox{\hyperlink{structNefasto}{Nefasto}}*\ \mbox{\hyperlink{main_8c_a6f8261722f09c4b05cc5cb4c453d1f92}{listaNefasto}},\ \mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}});\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \mbox{\hyperlink{structGR}{GR}}*\ \mbox{\hyperlink{funcoes_8h_a7cc39df6c8f347e03986821e5024dd2e}{criarGrafo}}(\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{main_8c_aee5fb13367bf087f465382e6b9477acd}{lista}});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \mbox{\hyperlink{structAresta}{Aresta}}*\ \mbox{\hyperlink{funcoes_8h_a946426da76e755887603221b5b72bb5f}{criarAresta}}(\mbox{\hyperlink{structAntena}{Antena}}*\ origem,\ \mbox{\hyperlink{structAntena}{Antena}}*\ destino);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{funcoes_8h_a45ab2c5582967793e4a61a4731748133}{listarArestas}}(\mbox{\hyperlink{structGR}{GR}}*\ grafo);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{structGR}{GR}}*\ \mbox{\hyperlink{funcoes_8h_ac797acfab718d1f204c3734235f8dcec}{procuraProfundo}}(\mbox{\hyperlink{structGR}{GR}}*\ grafo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
 
 \end{DoxyCode}

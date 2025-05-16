@@ -3,17 +3,59 @@
 \mbox{\hyperlink{dados_8h}{Ir para a documentação deste ficheiro.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAntena_a3b196deb45a500d432ef7f7a653adbaf}{x}};\ \textcolor{comment}{//posi{\ucr}{\ucr}o\ x}}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAntena_a7166c31d6fd9c3607b300ee0dc6371ba}{y}};\ \textcolor{comment}{//posi{\ucr}{\ucr}o\ y}}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structAntena_a98d94cd90b6d9288fc867dbe7a6b6f41}{frequencia}};\ \textcolor{comment}{//frequ{\ucr}ncia\ (A\ ou\ O)}}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{structAntena_a20010d47a4aa05eee8fd6412a96e0b69}{prox}};\ \textcolor{comment}{//apontador\ para\ a\ pr{\ucr}xima\ antena}}
-\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{dados_8h_a843ab8b81393e8ebb3eb6b76e349acc2}{Antena}};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNefasto}{Nefasto}}\{}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNefasto_aabf5cd10f98572d15b8d031322f66aba}{x}};\ \textcolor{comment}{//posi{\ucr}{\ucr}o\ x}}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNefasto_aa87cbe26a1d2e491c5f52a16cdcddf8e}{y}};\ \textcolor{comment}{//posi{\ucr}{\ucr}o\ y}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNefasto}{Nefasto}}*\ \mbox{\hyperlink{structNefasto_a2e66dd45c057a1126343c936655992b6}{prox}};\ \textcolor{comment}{//\ apontador\ para\ o\ pr{\ucr}ximo\ efeito}}
-\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{dados_8h_ae690a2a29c460c7055653d2f38d277d4}{Nefasto}};}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ DADOS\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DADOS\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stdbool.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ X\_Y\ 1}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAntena_a3b196deb45a500d432ef7f7a653adbaf}{x}};\ \textcolor{comment}{//posição\ x}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAntena_a7166c31d6fd9c3607b300ee0dc6371ba}{y}};\ \textcolor{comment}{//posição\ y}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structAntena_a98d94cd90b6d9288fc867dbe7a6b6f41}{frequencia}};\ \textcolor{comment}{//frequência\ (A\ ou\ O)}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAdjacencia}{Adjacencia}}*\ \mbox{\hyperlink{structAntena_a4cf241e0af0c9c48073a58861befa414}{adjacencias}};\ \textcolor{comment}{//apontador\ para\ a\ lista\ de\ adjacências}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structAntena_a25676b23c83ec3094b9a2f7754c8cb68}{visitada}};\ \textcolor{comment}{//se\ a\ antena\ foi\ visitada\ ou\ não}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{structAntena_a20010d47a4aa05eee8fd6412a96e0b69}{prox}};\ \textcolor{comment}{//apontador\ para\ a\ próxima\ antena}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{structAntena}{Antena}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNefasto}{Nefasto}}\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNefasto_aabf5cd10f98572d15b8d031322f66aba}{x}};\ \textcolor{comment}{//posição\ x}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNefasto_aa87cbe26a1d2e491c5f52a16cdcddf8e}{y}};\ \textcolor{comment}{//posição\ y}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structNefasto_a85f5702a401e688929077f45c99f64e7}{frequencia}};\ \textcolor{comment}{//frequência\ (A\ ou\ O)}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNefasto}{Nefasto}}*\ \mbox{\hyperlink{structNefasto_a2e66dd45c057a1126343c936655992b6}{prox}};\ \textcolor{comment}{//apontador\ para\ o\ próximo\ efeito\ nefasto}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{structNefasto}{Nefasto}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGR}{GR}}\{}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{structGR_abb7d26ecdf8a6f35b71b2ca2b9efb8a4}{lista}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAresta}{Aresta}}*\ \mbox{\hyperlink{structGR_a83e8c65b5e6fc096c3cca2d900c501f9}{listaArestas}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}\ \mbox{\hyperlink{structGR}{GR}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAdjacencia}{Adjacencia}}\{}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAdjacencia_ac7d9be5fabcf540ad9d192d96a9e740a}{distancia}};\ \textcolor{comment}{//distância\ entre\ as\ antenas}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \}\ \mbox{\hyperlink{structAdjacencia}{Adjacencia}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAresta}{Aresta}}\{}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{structAresta_a20bc33bb4baf5eb04cf6fe206037f1ee}{origem}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAntena}{Antena}}*\ \mbox{\hyperlink{structAresta_a536469e71d455d12fc4d175aced3478c}{destino}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAresta}{Aresta}}*\ \mbox{\hyperlink{structAresta_a9a0dbe60945590437bb155b64632f411}{prox}};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structAresta_a5af4a18fe648a570995127a3f2e89f5f}{distancia}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \}\ \mbox{\hyperlink{structAresta}{Aresta}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
