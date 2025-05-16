@@ -9,8 +9,7 @@ Ficheiro com as funções do menu.
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-Diagrama de dependências de inclusão para funcoes.\+c\+:
-\nopagebreak
+Diagrama de dependências de inclusão para funcoes.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,7 +69,23 @@ Função de carregar as antenas do ficheiro.
 {\em x} & Coordenada x (colunas) \\
 \hline
 \end{DoxyParams}
-Abrir o ficheiro em modo leitura ("{}r -\/$>$ read"{})\Hypertarget{funcoes_8c_af76ca1c6ef0441952e3dc481b1fe437a}\index{funcoes.c@{funcoes.c}!criarAntena@{criarAntena}}
+Abrir o ficheiro em modo leitura ("{}r -\/$>$ read"{})Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{funcoes_8c_a271cfc7165df8985a5defc51e624835b_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{funcoes_8c_a271cfc7165df8985a5defc51e624835b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{funcoes_8c_af76ca1c6ef0441952e3dc481b1fe437a}\index{funcoes.c@{funcoes.c}!criarAntena@{criarAntena}}
 \index{criarAntena@{criarAntena}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{criarAntena()}{criarAntena()}}
 {\footnotesize\ttfamily \label{funcoes_8c_af76ca1c6ef0441952e3dc481b1fe437a} 
@@ -94,6 +109,14 @@ Função de criar novas antenas
 \begin{DoxyReturn}{Retorna}
 Antena\texorpdfstring{$\ast$}{*} apontador para a nova antena 
 \end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funcoes_8c_af76ca1c6ef0441952e3dc481b1fe437a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_a946426da76e755887603221b5b72bb5f}\index{funcoes.c@{funcoes.c}!criarAresta@{criarAresta}}
 \index{criarAresta@{criarAresta}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{criarAresta()}{criarAresta()}}
@@ -116,6 +139,14 @@ Função de criar arestas.
 \begin{DoxyReturn}{Retorna}
 Aresta\texorpdfstring{$\ast$}{*} Nova aresta criada 
 \end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{funcoes_8c_a946426da76e755887603221b5b72bb5f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e}\index{funcoes.c@{funcoes.c}!criarGrafo@{criarGrafo}}
 \index{criarGrafo@{criarGrafo}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{criarGrafo()}{criarGrafo()}}
@@ -138,6 +169,22 @@ Função de criar grafos.
 \begin{DoxyReturn}{Retorna}
 GR\texorpdfstring{$\ast$}{*} Grafo criado 
 \end{DoxyReturn}
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e_cgraph}
+\end{center}
+\end{figure}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{funcoes_8c_a7cc39df6c8f347e03986821e5024dd2e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_a67869d474994adbd9c4fc06bd81eb1e1}\index{funcoes.c@{funcoes.c}!deduzirNefasto@{deduzirNefasto}}
 \index{deduzirNefasto@{deduzirNefasto}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{deduzirNefasto()}{deduzirNefasto()}}
@@ -159,6 +206,14 @@ Função de dedução de efeito nefasto.
 {\em y} & posição y da antena no ficheiro \\
 \hline
 \end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{funcoes_8c_a67869d474994adbd9c4fc06bd81eb1e1_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_aa905d7197842901785c78975e1e2e07e}\index{funcoes.c@{funcoes.c}!listarAntenas@{listarAntenas}}
 \index{listarAntenas@{listarAntenas}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{listarAntenas()}{listarAntenas()}}
@@ -176,6 +231,14 @@ Função de listar as antenas.
 {\em lista\+Nefasto} & lista ligada de efeitos nefastos \\
 \hline
 \end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{funcoes_8c_aa905d7197842901785c78975e1e2e07e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_a45ab2c5582967793e4a61a4731748133}\index{funcoes.c@{funcoes.c}!listarArestas@{listarArestas}}
 \index{listarArestas@{listarArestas}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{listarArestas()}{listarArestas()}}
@@ -195,6 +258,14 @@ Função de listar as arestas.
 {\em atual} & \doxylink{structAresta}{Aresta} atual \\
 \hline
 \end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{funcoes_8c_a45ab2c5582967793e4a61a4731748133_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_ac797acfab718d1f204c3734235f8dcec}\index{funcoes.c@{funcoes.c}!procuraProfundo@{procuraProfundo}}
 \index{procuraProfundo@{procuraProfundo}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{procuraProfundo()}{procuraProfundo()}}
@@ -214,6 +285,14 @@ Função de procura em profundidade.
 {\em grafo} & Grafo \\
 \hline
 \end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{funcoes_8c_ac797acfab718d1f204c3734235f8dcec_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{funcoes_8c_aa1cdc1f00fc740dd0389e5b615b30c23}\index{funcoes.c@{funcoes.c}!removerAntena@{removerAntena}}
 \index{removerAntena@{removerAntena}!funcoes.c@{funcoes.c}}
 \doxysubsubsection{\texorpdfstring{removerAntena()}{removerAntena()}}
@@ -233,3 +312,11 @@ Função de remover as antenas do ficheiro e da lista.
 {\em y} & posição y da antena no ficheiro \\
 \hline
 \end{DoxyParams}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{funcoes_8c_aa1cdc1f00fc740dd0389e5b615b30c23_icgraph}
+\end{center}
+\end{figure}

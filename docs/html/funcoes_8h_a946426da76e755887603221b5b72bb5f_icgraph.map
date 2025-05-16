@@ -1,0 +1,7 @@
+<map id="criarAresta" name="criarAresta">
+<area shape="rect" id="Node000001" title="Função de criar arestas." alt="" coords="229,5,313,31"/>
+<area shape="rect" id="Node000002" href="$funcoes_8c.html#a7cc39df6c8f347e03986821e5024dd2e" title="Função que cria um grafo com base nas antenas." alt="" coords="103,5,181,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,21,181,21,181,16,213,16"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Inclusão das bibliotecas necessárias." alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

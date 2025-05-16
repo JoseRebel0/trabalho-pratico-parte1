@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Trabalho Prático Parte 1", "index.html", [
+  [ "Trabalho Prático - Estruturas de Dados Avançadas", "index.html", [
     [ "Estruturas de dados", "annotated.html", [
       [ "Estruturas de dados", "annotated.html", "annotated_dup" ],
       [ "Índice das estruturas de dados", "classes.html", null ],
