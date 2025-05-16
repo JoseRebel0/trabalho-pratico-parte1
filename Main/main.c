@@ -26,7 +26,7 @@
  */
 Antena* lista = NULL;
 Nefasto* listaNefasto = NULL;
-Aresta* listaArestas = NULL; // Lista de arestas
+Aresta* listaArestas = NULL;
 
 
 int main() {
@@ -119,6 +119,8 @@ int main() {
 
     listarArestas(novoGrafo);
 
+    procuraProfundo(novoGrafo, 10, 10);
+
 #pragma endregion
 
 
@@ -192,5 +194,17 @@ int main() {
 
 #pragma endregion
 
+
+
+/**
+ * @brief Procura em Profundidade
+ * @details Esta função tem como objetivo fazer a listagem das adjacencias de cada antena (neste caso serão as antenas restantes)
+ * @param listaArestas Lista de arestas
+*/
+#pragma region Procura em Profundidade
+
+procuraProfundo(novoGrafo, 10, 10);
+
+#pragma endregion
 
 }

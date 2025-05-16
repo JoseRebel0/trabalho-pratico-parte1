@@ -52,3 +52,8 @@ Aresta* criarAresta(Antena* origem, Antena* destino);
  * @brief Função de listar as arestas
  */
 char* listarArestas(GR* grafo);
+
+/**
+ * @brief Função de procura em profundidade
+*/
+GR* procuraProfundo(GR* grafo, int x, int y);

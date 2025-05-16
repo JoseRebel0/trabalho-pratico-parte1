@@ -4,6 +4,10 @@
 * @brief Ficheiro com as estruturas das antenas
 */
 
+#ifndef DADOS_H
+#define DADOS_H
+
+
 #include "stdbool.h"
 
 #define X_Y 1
@@ -39,7 +43,7 @@ typedef struct Nefasto {
  */
 typedef struct GR{
 
-    struct Antena* antenas;
+    struct Antena* lista;
     struct Aresta* listaArestas;
 
 } GR;
@@ -66,3 +70,5 @@ typedef struct Aresta{
     float distancia;
 
 } Aresta;
+
+#endif

@@ -174,31 +174,34 @@
  * @param listaNefasto lista ligada de efeitos nefastos
  */
 #pragma region Listar Antenas
-char* listarAntenas(Antena* lista, Nefasto* listaNefasto) { // Função de listar as antenas
-    
-    printf("-------------|Antenas|------------\n"); // Imprime a lista de antenas
-    printf("Posicao       |    Frequencia     \n");
-    printf("--------------|-------------------\n");
-    while (lista != NULL) { // Enquanto as listas não forem vazias
+    char* listarAntenas(Antena* lista, Nefasto* listaNefasto) {
+        
+        printf("-------------|Antenas|------------\n"); // Imprime a lista de antenas
+        printf("Posicao       |    Frequencia     \n");
+        printf("--------------|-------------------\n");
+        while (lista != NULL) { // Enquanto o valor da lista não for vazio
 
-        printf("(%d, %d)        |      %C \n", lista->x, lista->y, lista->frequencia);
-        lista = lista->prox;
+            printf("(%d, %d)        |      %C \n", lista->x, lista->y, lista->frequencia);
+            lista = lista->prox;
+        }
+
+        printf("-----------|Nefasto|------------\n");
+        printf("Posicao       |    Frequencia     \n");
+        printf("--------------|-------------------\n");
+        while (listaNefasto != NULL) {
+
+            printf("(%d, %d)        |      %C \n", listaNefasto->x, listaNefasto->y, listaNefasto->frequencia);
+            listaNefasto = listaNefasto->prox;
+        }
+
+        return "";
+        
     }
-
-    printf("-----------|Nefasto|------------\n");
-    printf("Posicao       |    Frequencia     \n");
-    printf("--------------|-------------------\n");
-    while (listaNefasto != NULL) { // Enquanto as listas não forem vazias
-
-        printf("(%d, %d)        |      %C \n", listaNefasto->x, listaNefasto->y, listaNefasto->frequencia);
-        listaNefasto = listaNefasto->prox;
-    }
-
-    return "";
-    
-}
 #pragma endregion
 
+
+
+//========================/Parte 2/====================
 
 
 /**
@@ -209,17 +212,17 @@ char* listarAntenas(Antena* lista, Nefasto* listaNefasto) { // Função de lista
  */
 #pragma region Criar Aresta
 
-Aresta* criarAresta(Antena* origem, Antena* destino) {
+    Aresta* criarAresta(Antena* origem, Antena* destino) {
 
-    Aresta* novaAresta = (Aresta*) malloc(sizeof(Aresta));
+        Aresta* novaAresta = (Aresta*) malloc(sizeof(Aresta));
 
-    novaAresta->origem = origem;
-    novaAresta->destino = destino;
-    novaAresta->prox = NULL;
-    novaAresta->distancia = abs(origem->x - destino->x) + abs(origem->y - destino->y); // Cálculo da distância entre as antenas (peso da aresta)
+        novaAresta->origem = origem;
+        novaAresta->destino = destino;
+        novaAresta->prox = NULL;
+        novaAresta->distancia = abs(origem->x - destino->x) + abs(origem->y - destino->y); // Cálculo da distância entre as antenas (peso da aresta)
 
-    return novaAresta;
-}
+        return novaAresta;
+    }
 
 #pragma endregion
 
@@ -230,36 +233,39 @@ Aresta* criarAresta(Antena* origem, Antena* destino) {
  * @param listaArestas Lista ligada de arestas
  * @return GR* Grafo criado
  */
-GR* criarGrafo(Antena* lista) {
+#pragma region Criar Grafo
 
-    GR* grafo = (GR*) malloc(sizeof(GR));
+    GR* criarGrafo(Antena* lista) {
 
-    grafo->antenas = lista; // Carrega as antenas da lista de antenas
-    
-    grafo->listaArestas = NULL;
+        GR* grafo = (GR*) malloc(sizeof(GR));
 
-    for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) { // Origem
+        grafo->lista = lista; // As antenas do grafo passam a ser as da lista de antenas
+        
+        grafo->listaArestas = NULL;
 
-        for (Antena* a2 = a1->prox; a2 != NULL; a2 = a2->prox) { // Destino
+        for (Antena* a1 = lista; a1 != NULL; a1 = a1->prox) { // Origem
 
-            
-            if (a1->frequencia == a2->frequencia) {
+            for (Antena* a2 = a1->prox; a2 != NULL; a2 = a2->prox) { // Destino
 
-                // Criar aresta a1 -> a2
-                Aresta* novaAresta = criarAresta(a1, a2);
-                novaAresta->prox = grafo->listaArestas;
-                grafo->listaArestas = novaAresta;
+                if (a1->frequencia == a2->frequencia) {
 
-                // Criar aresta a2 -> a1
-                Aresta* novaAresta2 = criarAresta(a2, a1);
-                novaAresta2->prox = grafo->listaArestas;
-                grafo->listaArestas = novaAresta2;
+                    // Criar aresta a1 -> a2
+                    Aresta* novaAresta = criarAresta(a1, a2);
+                    novaAresta->prox = grafo->listaArestas;
+                    grafo->listaArestas = novaAresta;
+
+                    // Criar aresta a2 -> a1
+                    Aresta* novaAresta2 = criarAresta(a2, a1);
+                    novaAresta2->prox = grafo->listaArestas;
+                    grafo->listaArestas = novaAresta2;
+                }
             }
         }
+
+        return grafo;
     }
 
-    return grafo;
-}
+#pragma endregion
 
 
 
@@ -268,25 +274,62 @@ GR* criarGrafo(Antena* lista) {
  * @param grafo Ponteiro para o grafo
  * @param atual Aresta atual
  */
-char* listarArestas(GR* grafo) {
+#pragma region Listar Arestas
 
-    Aresta* atual = grafo->listaArestas;
+    char* listarArestas(GR* grafo) {
 
-    printf("-------------| Arestas do Grafo |------------\n");
-    printf("Origem       ->  Destino     | Freq | Distancia\n");
-    printf("----------------------------------------------\n");
+        Aresta* atual = grafo->listaArestas;
 
-    while (atual != NULL) {
+        printf("-------------| Arestas do Grafo |------------\n");
+        printf("Origem       ->  Destino     | Freq | Distancia\n");
+        printf("----------------------------------------------\n");
 
-        printf("(%d, %d) -> (%d, %d)   |   %c   |   %.2f\n",
-               atual->origem->x, atual->origem->y,
-               atual->destino->x, atual->destino->y,
-               atual->origem->frequencia,  
-               atual->distancia);
+        while (atual != NULL) {
 
-        atual = atual->prox;
+            printf("(%d, %d) -> (%d, %d)   |   %c   |   %.2f\n", atual->origem->x, atual->origem->y,
+            atual->destino->x, atual->destino->y, atual->origem->frequencia, atual->distancia);
+
+            atual = atual->prox;
+        }
+
+        return "";
+
     }
 
-    return "";
+#pragma endregion
 
-}
+
+/**
+ * @brief Função de Procura em profundidade
+ * @param listaArestas Lista de arestas
+ * @param grafo Grafo
+*/
+#pragma region Procura em profundidade
+
+    GR* procuraProfundo(GR* grafo, int x, int y) {
+
+        Aresta* atual = grafo->listaArestas; // para percorrer a lista de arestas
+
+        printf("=======|Procura em profundidade|======= \n");
+        printf("(%d, %d)", x, y); //Printa a origem
+
+        while(atual != NULL) {
+
+            if(atual->origem->x == x && atual->origem->y == y ) { //Procura todas as vezes em que a antena escolhida é a origem
+
+                printf(" -> (%d, %d)", atual->destino->x, atual->destino->y); //Printa o destino
+
+            }
+
+            atual = atual->prox;
+
+        }
+
+        printf("\n"); //Printas aqui para não dar erro
+
+        return grafo;
+
+    }
+
+#pragma endregion
+
