@@ -26,8 +26,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/filipa/trabalho-pratico-parte1/Functions",
-      "program": "/Users/filipa/trabalho-pratico-parte1/Functions/build/Debug/outDebug"
+      "cwd": "/Users/filipa/trabalho-pratico-parte1/Main",
+      "program": "/Users/filipa/trabalho-pratico-parte1/Main/build/Debug/outDebug"
     }
   ]
 }
