@@ -10,7 +10,6 @@
 
 #include "stdbool.h"
 
-#define X_Y 1
 
 /**
  *@brief Estrutura de dados das antenas
@@ -56,7 +55,6 @@ typedef struct Adjacencia{
     int distancia; //distância entre as antenas
 
 } Adjacencia;
-
 
 
 /**

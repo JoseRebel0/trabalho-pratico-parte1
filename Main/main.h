@@ -9,7 +9,7 @@
  */
 #include "../Functions/funcoes.h"
 
-
+#define X_Y 1 // Variável para x e y para teste das coordenadas
 
 /**
  * @brief Definição da função de menu

@@ -15,9 +15,9 @@
 
 /**
  * @brief Função de criar novas antenas
- * @param x posição x
- * @param y posição y
- * @param frequencia frequência (A ou O)
+ * @param x Posição x
+ * @param y Posição y
+ * @param frequencia Frequência (A ou O)
  * @return Antena* apontador para a nova antena
  */
 #pragma region Criar Antena
@@ -42,6 +42,7 @@
  * @brief Função de carregar as antenas do ficheiro
  * @param caminhoFicheiro Caminho do ficheiro
  * @param lista Lista ligada
+ * @param c Caracter atual
  * @param y Coordenada y (linhas)
  * @param x Coordenada x (colunas)
  */
@@ -55,7 +56,7 @@
         FILE* ficheiro = fopen(caminhoFicheiro, "r");
 
         Antena* lista = NULL;
-        char c; // Caracter atual
+        char c; 
         int y = 0; 
         int x = 0; 
 
@@ -91,8 +92,10 @@
 
 /**
  * @brief Função de remover as antenas da lista
- * @param x posição x da antena no ficheiro
- * @param y posição y da antena no ficheiro
+ * @param atual Antena atual
+ * @param anterior Antena anterior
+ * @param x Posição x da antena no ficheiro
+ * @param y Posição y da antena no ficheiro
  */
 #pragma region Remover Antena
 
@@ -130,10 +133,10 @@
 
 /**
  * @brief Função de dedução de efeito nefasto
- * @param lista lista ligada de antenas
+ * @param lista Lista ligada de antenas
  * @param listaNefasto lista ligada de efeitos nefastos
- * @param x posição x da antena no ficheiro
- * @param y posição y da antena no ficheiro
+ * @param x Posição x da antena no ficheiro
+ * @param y Posição y da antena no ficheiro
  */
 #pragma region Deduzir Efeito Nefasto
 
@@ -201,7 +204,7 @@
 
 
 
-//========================/Parte 2/====================
+//========================/Fase 2/====================
 
 
 /**
@@ -229,6 +232,7 @@
 
 /**
  * @brief Função que cria um grafo com base nas antenas
+ * @param grafo Grafo criado
  * @param lista Lista ligada de antenas
  * @param listaArestas Lista ligada de arestas
  * @return GR* Grafo criado
@@ -258,6 +262,8 @@
                     Aresta* novaAresta2 = criarAresta(a2, a1);
                     novaAresta2->prox = grafo->listaArestas;
                     grafo->listaArestas = novaAresta2;
+
+                    //Grafo não direcionado
                 }
             }
         }
@@ -303,6 +309,7 @@
  * @brief Função de Procura em profundidade
  * @param listaArestas Lista de arestas
  * @param grafo Grafo
+ * @param atual Aresta atual
 */
 #pragma region Procura em profundidade
 

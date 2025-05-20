@@ -4,7 +4,8 @@
     "funcmain.h": "c",
     "menu.h": "c",
     "funcoes.h": "c",
-    "dados.h": "c"
+    "dados.h": "c",
+    "stdbool.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

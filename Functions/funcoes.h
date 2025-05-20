@@ -20,6 +20,8 @@ Antena* criarAntena(int x, int y, char frequencia);
 Antena* removerAntena(Antena* lista, int x, int y);
 
 
+//------------------|Fase 2|-------------------
+
 
 /**
  * @brief Função de carregar as antenas do ficheiro

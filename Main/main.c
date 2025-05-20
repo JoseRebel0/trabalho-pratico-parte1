@@ -103,6 +103,8 @@ int main() {
 #pragma endregion
 
 
+//----------|Fase 2|---------
+
 /**
  * @brief Carregar grafo do ficheiro
  * @details Esta função tem como objetivo carregar o grafo do ficheiro
@@ -186,7 +188,7 @@ int main() {
 /**
  * @brief Listar arestas
  * @details Esta função tem como objetivo listar as arestas do grafo
- * @param grafo grafo
+ * @param novoGrafo Grafo
  */
 #pragma region Listar Arestas
 
@@ -199,11 +201,11 @@ int main() {
 /**
  * @brief Procura em Profundidade
  * @details Esta função tem como objetivo fazer a listagem das adjacencias de cada antena (neste caso serão as antenas restantes)
- * @param listaArestas Lista de arestas
+ * @param novoGrafo Grafo
 */
 #pragma region Procura em Profundidade
 
-procuraProfundo(novoGrafo, 10, 10);
+procuraProfundo(novoGrafo, 6, 3);
 
 #pragma endregion
 
